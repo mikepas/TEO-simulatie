@@ -16,10 +16,10 @@ export class MenuComponent implements OnInit {
   }
 
   toSimulation() {
-    this.router.navigate([this.type + '-water-simulatie']);
+    this.router.navigate(['/' + this.type + '-water/' + this.type + '-water-simulatie']);
   }
 
   toFormula() {
-    this.router.navigate([this.type + '-water-wiki']);
+    this.router.navigate(['/' + this.type + '-water/' + this.type + '-water-wiki']);
   }
 }

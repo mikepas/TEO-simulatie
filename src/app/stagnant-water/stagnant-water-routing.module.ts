@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StagnantWaterSimulationComponent } from '../stagnant-water-simulation/stagnant-water-simulation.component';
-import { StagnantWaterWikiComponent } from '../stagnant-water-wiki/stagnant-water-wiki.component';
+import { StagnantWaterSimulationComponent } from './stagnant-water-simulation/stagnant-water-simulation.component';
+import { StagnantWaterWikiComponent } from './stagnant-water-wiki/stagnant-water-wiki.component';
 import { StagnantWaterComponent } from './stagnant-water.component';
 
 const routes: Routes = [
