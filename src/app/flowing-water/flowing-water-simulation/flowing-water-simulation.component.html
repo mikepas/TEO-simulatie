@@ -1,1 +1,19 @@
-<p>flowing-water-simulation works!</p>
+<div class="row">
+    <div class="col-md-6">
+        <select (change)="changeType($event)">
+            <option *ngFor="let c of types">{{c}}</option>
+            </select>
+        <h1>Invoerwaardes</h1>
+        <div class="input-container">
+            <div *ngFor="let i of selectedCalculation.inputs">
+                <label for="{{i.name}}">{{i.name}}:</label>
+                <input id="{{i.name}}" [(ngModel)]="i.input" type="{{i.type}}"/>
+                <label for="{{i.name}}">{{i.unit}}</label>
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="calculate()">Berekenen</button>
+    </div>
+    <div class="col-md-6">
+        <img class="simulation-svg" src="assets/simulation-r6.svg"/>
+    </div>
+</div>

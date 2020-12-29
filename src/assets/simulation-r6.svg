@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940.631" height="322" viewBox="0 0 940.631 322">
+  <g id="Component_8_1" data-name="Component 8 – 1" transform="translate(0.131)">
+    <g id="Rectangle_1115" data-name="Rectangle 1115" transform="translate(0.5)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="940" height="322" stroke="none"/>
+      <rect x="0.5" y="0.5" width="939" height="321" fill="none"/>
+    </g>
+    <path id="Path_236" data-name="Path 236" d="M1413.938,3871.823c-194.635-.869-365.106,55.589-365.106,55.589" transform="translate(-474.258 -3857.421)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_237" data-name="Path 237" d="M413.68.008C193.15-.689,0,44.606,0,44.606" transform="matrix(-0.999, 0.052, -0.052, -0.999, 782.059, 231.641)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_238" data-name="Path 238" d="M365.106.01C170.471-.858,0,55.6,0,55.6" transform="matrix(-0.996, -0.087, 0.087, -0.996, 569.536, 125.384)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_239" data-name="Path 239" d="M365.106.01C170.471-.859,0,55.6,0,55.6" transform="matrix(-0.974, -0.225, 0.225, -0.974, 356.401, 307.612)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_240" data-name="Path 240" d="M209.251,0C97.7-.27,0,17.468,0,17.468" transform="matrix(-0.966, -0.259, 0.259, -0.966, 202.121, 110.431)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_241" data-name="Path 241" d="M161.136,0A1125.4,1125.4,0,0,0,0,11.917" transform="matrix(0.996, -0.087, 0.087, 0.996, 778.486, 174.76)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_242" data-name="Path 242" d="M-1398.736,4102.727l-55.348-12.8,29.6-11.584" transform="translate(1472.451 -3942.011)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_243" data-name="Path 243" d="M-1454.084,4096.513c14.718,17.284,19.9,22.784,19.9,22.784" transform="translate(1472.451 -3947.99)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_244" data-name="Path 244" d="M55.348,24.386,0,11.585,29.6,0" transform="matrix(0.94, -0.342, 0.342, 0.94, 858.124, 86.807)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_245" data-name="Path 245" d="M0,0C14.718,17.284,19.9,22.785,19.9,22.785" transform="matrix(0.94, -0.342, 0.342, 0.94, 862.294, 98.265)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_25" data-name="Line 25" y2="79.847" transform="translate(696.45 194.141)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_26" data-name="Line 26" y2="79.847" transform="translate(715.237 194.141)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_27" data-name="Line 27" x2="0.381" y2="53.487" transform="translate(478 220.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_28" data-name="Line 28" x2="0.155" y2="53.487" transform="translate(495 220.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_29" data-name="Line 29" x2="61.059" transform="translate(495.155 273.988)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_30" data-name="Line 30" x1="73.137" transform="translate(623.313 273.988)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_31" data-name="Line 31" y1="12.078" transform="translate(556.214 261.91)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_32" data-name="Line 32" y1="12.078" transform="translate(623.313 261.91)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_33" data-name="Line 33" x2="67.098" transform="translate(556.214 261.91)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_34" data-name="Line 34" y2="17.445" transform="translate(478.381 273.988)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_35" data-name="Line 35" x1="77.834" transform="translate(478.381 291.433)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_36" data-name="Line 36" x2="91.924" transform="translate(623.313 291.433)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_37" data-name="Line 37" y2="17.445" transform="translate(715.237 273.988)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_38" data-name="Line 38" y2="15.433" transform="translate(556.214 291.433)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_39" data-name="Line 39" y2="15.433" transform="translate(623.313 291.433)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_40" data-name="Line 40" x2="67.098" transform="translate(556.214 306.866)" fill="none" stroke="#707070" stroke-width="1"/>
+    <text id="TSA" transform="translate(572.5 291)" fill="#707070" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">TSA</tspan></text>
+    <path id="Path_246" data-name="Path 246" d="M29.127,12.833,0,6.1,15.58,0" transform="translate(699.868 193.969) rotate(-104)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_247" data-name="Path 247" d="M0,0C7.745,9.1,10.472,11.991,10.472,11.991" transform="translate(706.093 192.417) rotate(-104)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_248" data-name="Path 248" d="M29.127,12.833,0,6.1,15.58,0" transform="translate(491.613 185.253) rotate(76)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_249" data-name="Path 249" d="M0,0C7.745,9.1,10.472,11.991,10.472,11.991" transform="translate(485.387 186.806) rotate(76)" fill="none" stroke="#707070" stroke-width="1"/>
+    <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(439.5 150)" fill="none" stroke="#707070" stroke-width="1">
+      <ellipse cx="34.5" cy="13.5" rx="34.5" ry="13.5" stroke="none"/>
+      <ellipse cx="34.5" cy="13.5" rx="34" ry="13" fill="none"/>
+    </g>
+    <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(319.5 142)" fill="none" stroke="rgba(112,112,112,0.5)" stroke-width="1">
+      <ellipse cx="94.5" cy="21.5" rx="94.5" ry="21.5" stroke="none"/>
+      <ellipse cx="94.5" cy="21.5" rx="94" ry="21" fill="none"/>
+    </g>
+    <g id="Ellipse_10" data-name="Ellipse 10" transform="translate(217.5 134)" fill="none" stroke="rgba(112,112,112,0.25)" stroke-width="1">
+      <ellipse cx="145.5" cy="28.5" rx="145.5" ry="28.5" stroke="none"/>
+      <ellipse cx="145.5" cy="28.5" rx="145" ry="28" fill="none"/>
+    </g>
+    <text id="_5_C" data-name="&gt; 5°C" transform="translate(452.5 169)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">&gt; 5°C</tspan></text>
+    <text id="_2-5_C" data-name="2-5°C" transform="translate(378.5 171)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">2-5°C</tspan></text>
+    <text id="_1-2_C" data-name="1-2°C" transform="translate(263.5 171)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">1-2°C</tspan></text>
+    <text id="_0_5-1_C" data-name="0,5-1°C" transform="translate(144.5 169)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">0,5-1°C</tspan></text>
+    <g id="Ellipse_11" data-name="Ellipse 11" transform="translate(95.5 131)" fill="none" stroke="rgba(112,112,112,0.1)" stroke-width="1">
+      <ellipse cx="206.5" cy="31.5" rx="206.5" ry="31.5" stroke="none"/>
+      <ellipse cx="206.5" cy="31.5" rx="206" ry="31" fill="none"/>
+    </g>
+    <line id="Line_43" data-name="Line 43" x2="413" transform="translate(96 125.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_44" data-name="Line 44" y1="14" transform="translate(509 118.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_45" data-name="Line 45" y1="14" transform="translate(96 118.5)" fill="none" stroke="#707070" stroke-width="1"/>
+  </g>
+</svg>
