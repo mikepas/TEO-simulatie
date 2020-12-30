@@ -9,17 +9,13 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   @Input() type: String | undefined;
+  simulationUrl: string = "";
+  wikiUrl: string = "";
 
   constructor(public router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  toSimulation() {
-    this.router.navigate(['/' + this.type + '-water/' + this.type + '-water-simulatie']);
-  }
-
-  toFormula() {
-    this.router.navigate(['/' + this.type + '-water/' + this.type + '-water-wiki']);
+    this.simulationUrl = '/' + this.type + '-water/' + this.type + '-water-simulatie';
+    this.wikiUrl = '/' + this.type + '-water/' + this.type + '-water-wiki';
   }
 }
