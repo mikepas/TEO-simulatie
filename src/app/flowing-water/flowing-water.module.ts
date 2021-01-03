@@ -6,9 +6,10 @@ import { FlowingWaterComponent } from './flowing-water.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlowingWaterSimulationComponent } from './flowing-water-simulation/flowing-water-simulation.component';
 import { FlowingWaterWikiComponent } from './flowing-water-wiki/flowing-water-wiki.component';
+import { FlowingWaterViewComponent } from './flowing-water-view/flowing-water-view.component';
 
 @NgModule({
-  declarations: [FlowingWaterComponent, FlowingWaterSimulationComponent, FlowingWaterWikiComponent],
+  declarations: [FlowingWaterComponent, FlowingWaterSimulationComponent, FlowingWaterWikiComponent, FlowingWaterViewComponent],
   imports: [
     CommonModule,
     FlowingWaterRoutingModule,

@@ -1,0 +1,21 @@
+#sailorTableArea{
+  margin-top: 20px;
+}
+.sailorTable{
+  display: inline-block;
+  width: 50%;
+
+}
+.sailorTable{
+  white-space: normal;
+}
+tbody {
+  display:block;
+  height:200px;
+  overflow:auto;
+}
+thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}
