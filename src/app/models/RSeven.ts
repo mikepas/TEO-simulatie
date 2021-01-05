@@ -16,17 +16,17 @@ export class RSeven implements Calculation {
     constructor() {
         this.name = "R-7";
         this.formulas = [
-            new Formula("Formula 1", "X + Y = Z"),
-            new Formula("Formula 2", "X + Y + Z = Q")
+            new Formula("Formula 1", "Uitleg 1", "X + Y = Z"),
+            new Formula("Formula 2", "Uitleg 2", "X + Y + Z = Q")
         ];
         this.references = [
             new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
             new Reference("referentie 2", "https://m.youtube.com/watch?v=5aopMm7UGYA")
         ];
         this.inputs = [
-            new Input("X", "number", 0, "number"),
-            new Input("Y", "number", 0, "number"),
-            new Input("Z", "number", 0, "number")
+            new Input("X", "", 0, "number"),
+            new Input("Y", "", 0, "number"),
+            new Input("Z", "", 0, "number")
         ];
         this.deltaT = 0;
         this.MinimalV = 0;
