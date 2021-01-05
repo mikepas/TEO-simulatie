@@ -1,8 +1,9 @@
-<div class="table-responsive" id="sailorTableArea">
-  <table class="sailorTable table table-striped table-bordered table-hover" width="100%">
+<button (click)="AddItem()">Show</button>
+<div class="table-responsive" id="TableArea">
+  <table class="ecologyTable table table-striped table-bordered table-hover" id="temperatureTable" width="100%">
         <thead>
           <tr>
-              <th>Temperatuur <span class="h4">10°C</span></th>
+              <th>Temperatuur <span class="h4">{{TempCelsius}}°C</span></th>
           </tr>
       </thead>
       <thead>
@@ -13,14 +14,14 @@
           </tr>
       </thead>
       <tbody>
-          <tr>
-            <td>Donna</td>
-            <td>Snider</td>
-            <td>Customer Support</td>
+          <tr *ngFor="let o of list">
+            <td>{{o[0]}}</td>
+            <td>{{o[1]}}</td>
+            <td>{{o[2]}}</td>
           </tr>
       </tbody>
   </table>
-  <table class="sailorTable table table-striped table-bordered table-hover" width="100%">
+  <table class="ecologyTable table table-striped table-bordered table-hover" id="flowingWaterTable" width="100%">
     <thead>
       <tr>
           <th>Inlaatsnelheid <span class="h4">10 m3/s</span></th>
@@ -42,7 +43,7 @@
   </tbody>
 </table>
 
-<table class="sailorTable table table-striped table-bordered table-hover" width="100%">
+<table class="ecologyTable table table-striped table-bordered table-hover" id="mixingZoneTable" width="100%">
   <thead>
     <tr>
         <th>Mengzone</th>

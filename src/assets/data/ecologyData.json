@@ -1,0 +1,66 @@
+{
+  "Planktons": {
+    "Cladocera": {
+      "stressTemperatures": [0, 34, 37, 40],
+      "decrease": ["0%", "50-80%", "95-100%", "100%"],
+      "increase": ["Ja", "Nee", "Nee", "Nee"]
+    },
+    "Copepoda": {
+      "stressTemperatures": [0, 37, 40],
+      "decrease": ["0%", "50%", "50-80%"],
+      "increase": ["Ja", "Nee", "Nee", "Nee"]
+    },
+    "Rotatoria": {
+      "stressTemperatures": [0, 37, 40],
+      "decrease": ["0%", "0-50%", "50-80%"],
+      "increase": ["Nee", "Nee", "Nee", "Nee"]
+    },
+    "Diatomeeen": {
+      "stressTemperatures": [0, 34, 37, 40],
+      "decrease": ["0%", "< 25%", "25-50%", "> 50%"],
+      "increase": ["Nee", "Nee", "Nee", "Nee"]
+    }
+  },
+  "Fishes": {
+    "Blankvoorn": {
+      "MaxTemperature": 27,
+      "MinTemperature": 10
+    },
+    "Baars": {
+      "MaxTemperature": 24,
+      "MinTemperature": 4
+    },
+    "Brasem": {
+      "MaxTemperature": 30.2,
+      "MinTemperature": 4
+    },
+    "Ruisvoorn": {
+      "MaxTemperature": 31.2,
+      "MinTemperature": 10
+    },
+    "Pos": {
+      "MaxTemperature": 28,
+      "MinTemperature": 12
+    },
+    "Zeelt": {
+      "MaxTemperature": 31.2,
+      "MinTemperature": 15
+    },
+    "Alver": {
+      "MaxTemperature": 37.7,
+      "MinTemperature": 8
+    },
+    "Riviergrondel": {
+      "MaxTemperature": 27.2,
+      "MinTemperature": 6
+    },
+    "Winde": {
+      "MaxTemperature": 26.6,
+      "MinTemperature": 2
+    },
+    "Snoekbaars": {
+      "MaxTemperature": 35.4,
+      "MinTemperature": 10
+    }
+  }
+}
