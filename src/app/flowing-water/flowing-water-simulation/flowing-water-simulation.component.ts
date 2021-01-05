@@ -29,6 +29,5 @@ export class FlowingWaterSimulationComponent implements OnInit {
 
   calculate() {
     this.selectedCalculation.calculate();
-    console.log(this.selectedCalculation.mixingZoneDistance);
   }
 }

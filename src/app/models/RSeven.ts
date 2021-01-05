@@ -7,8 +7,11 @@ export class RSeven implements Calculation {
     name: string;
     formulas: Formula[];
     references: Reference[];
-    mixingZoneDistance: number;
+    deltaT: number;
     inputs: Input[];
+    MinimalV: number;
+    heatCloudSeconds: number;
+    heatCloudLenght: number;
 
     constructor() {
         this.name = "R-7";
@@ -20,12 +23,15 @@ export class RSeven implements Calculation {
             new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
             new Reference("referentie 2", "https://m.youtube.com/watch?v=5aopMm7UGYA")
         ];
-        this.mixingZoneDistance = 0;
         this.inputs = [
             new Input("X", "number", 0, "number"),
             new Input("Y", "number", 0, "number"),
             new Input("Z", "number", 0, "number")
         ];
+        this.deltaT = 0;
+        this.MinimalV = 0;
+        this.heatCloudSeconds = 0;
+        this.heatCloudLenght = 0;
     }
 
     public calculate() : void {      
@@ -35,6 +41,6 @@ export class RSeven implements Calculation {
             results.push(this.inputs[index].input);
         });
     
-        this.mixingZoneDistance = (+results[0]) + (+results[1]) + (+results[2]);
+        this.deltaT = (+results[0]) + (+results[1]) + (+results[2]);
     }
 }
