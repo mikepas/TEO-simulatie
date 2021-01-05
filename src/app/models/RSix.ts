@@ -7,8 +7,11 @@ export class RSix implements Calculation {
     name: string;
     formulas: Formula[];
     references: Reference[];
-    mixingZoneDistance: number;
     inputs: Input[];
+    deltaT: number;
+    MinimalV: number;
+    heatCloudSeconds: number;
+    heatCloudLenght: number;
 
     constructor() {
         this.name = "R-6";
@@ -19,11 +22,16 @@ export class RSix implements Calculation {
         this.references = [
             new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
         ];
-        this.mixingZoneDistance = 0;
         this.inputs = [
-            new Input("A", "number", 0, "number"),
-            new Input("B", "number", 0, "number")
+            new Input("Jaarlijkse energiebehoefte", "MWh", 2610, "number"),
+            new Input("Debiet", "m3/s", 4, "number"),
+            new Input("Aantal dagen per jaar", "", 186, "number"),
+            new Input("Aantal uren per dag", "", 8, "number")
         ];
+        this.deltaT = 0;
+        this.MinimalV = 0;
+        this.heatCloudSeconds = 0;
+        this.heatCloudLenght = 0;
     }
 
     public calculate() : void {      
@@ -33,6 +41,6 @@ export class RSix implements Calculation {
             results.push(this.inputs[index].input);
         });
     
-        this.mixingZoneDistance = (+results[0]) + (+results[1]);
+        this.deltaT = ((+results[0]) * 3600000000) / (4186 * (997 * (+results[1]) * (31556926 * ((+results[2]) / 365) * ((+results[3]) / 24))));
     }
 }

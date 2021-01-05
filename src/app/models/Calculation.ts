@@ -6,7 +6,10 @@ export interface Calculation {
     name: string;
     formulas: Formula[];
     references: Reference[];
-    mixingZoneDistance: number;
     inputs: Input[];
+    deltaT: number;
+    MinimalV: number;
+    heatCloudSeconds: number;
+    heatCloudLenght: number;
     calculate: () => void;
 }

@@ -5,15 +5,24 @@
             </select>
         <h1>Invoerwaardes</h1>
         <div class="input-container">
-            <div *ngFor="let i of selectedCalculation.inputs">
-                <label for="{{i.name}}">{{i.name}}:</label>
-                <input id="{{i.name}}" [(ngModel)]="i.input" type="{{i.type}}"/>
-                <label for="{{i.name}}">{{i.unit}}</label>
+            <div *ngFor="let i of selectedCalculation.inputs" class="row">
+                <div class="col-xl">
+                    <label for="{{i.name}}">{{i.name}}:</label>
+                </div>
+                <div class="col-xl">
+                    <input id="{{i.name}}" [(ngModel)]="i.input" type="{{i.type}}"/>
+                    <label for="{{i.name}}">{{i.unit}}</label>
+                </div>
             </div>
         </div>
+        <br>
         <button class="btn btn-primary" (click)="calculate()">Berekenen</button>
     </div>
     <div class="col-md-6">
         <img class="simulation-svg" src="assets/simulation-r6.svg"/>
+        <p *ngIf="selectedCalculation.deltaT != 0"><b>Temperatuursverschil gehele lichaam:</b> {{ selectedCalculation.deltaT }}°C</p>
+        <p *ngIf="selectedCalculation.MinimalV != 0"><b>Minimaal debiet:</b> {{ selectedCalculation.MinimalV }}L/s</p>
+        <p *ngIf="selectedCalculation.heatCloudSeconds != 0"><b>Secondes voor vermenging:</b> {{ selectedCalculation.heatCloudSeconds }}s</p>
+        <p *ngIf="selectedCalculation.heatCloudLenght != 0"><b>Warmtewolk afstand:</b> {{ selectedCalculation.heatCloudLenght }}m</p>
     </div>
 </div>
