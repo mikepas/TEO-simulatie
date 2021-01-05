@@ -25,4 +25,5 @@
         <p *ngIf="selectedCalculation.heatCloudSeconds != 0"><b>Secondes voor vermenging:</b> {{ selectedCalculation.heatCloudSeconds }}s</p>
         <p *ngIf="selectedCalculation.heatCloudLenght != 0"><b>Warmtewolk afstand:</b> {{ selectedCalculation.heatCloudLenght }}m</p>
     </div>
+    <app-flowing-water-view [calculation]="selectedCalculation"></app-flowing-water-view>
 </div>

@@ -8,10 +8,10 @@ export class RSix implements Calculation {
     formulas: Formula[];
     references: Reference[];
     inputs: Input[];
-    deltaT: number;
-    MinimalV: number;
-    heatCloudSeconds: number;
-    heatCloudLenght: number;
+    deltaT: number; // temperatuurverschil hele rivier
+    MinimalV: number; // minimal debiet nodig om energie eruit te halen
+    heatCloudSeconds: number; // Hoe lang het duurt voordat de temperatuurverschil gemengd is met de rivier
+    heatCloudLenght: number; // Hoe lang de warmtewolk is
 
     constructor() {
         this.name = "R-6";
@@ -34,13 +34,13 @@ export class RSix implements Calculation {
         this.heatCloudLenght = 0;
     }
 
-    public calculate() : void {      
+    public calculate() : void {
         let results: number[] = [];
-    
+
         Object.keys(this.inputs).forEach((value: string, index: number, array: string[]) => {
             results.push(this.inputs[index].input);
         });
-    
+
         this.deltaT = ((+results[0]) * 3600000000) / (4186 * (997 * (+results[1]) * (31556926 * ((+results[2]) / 365) * ((+results[3]) / 24))));
     }
 }
