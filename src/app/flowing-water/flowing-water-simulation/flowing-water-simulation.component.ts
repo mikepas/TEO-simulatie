@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RSix } from '../../models/RSix';
 import { Calculation } from '../../models/Calculation';
+import { Types } from '../../models/Types';
 
 @Component({
   selector: 'app-flowing-water-simulation',
@@ -8,23 +8,23 @@ import { Calculation } from '../../models/Calculation';
   styleUrls: ['./flowing-water-simulation.component.scss']
 })
 export class FlowingWaterSimulationComponent implements OnInit {
-  types: string[] = ["R-6"];
-  selectedType: string = "R-6";
-  selectedCalculation: Calculation = new RSix;
+  types: Types;
+  selectedCalculation: Calculation;
 
-  constructor() { }
+  constructor() {
+    this.types = new Types();
+    this.selectedCalculation = this.types.flowingTypes[0];
+  }
 
   ngOnInit(): void {
   }
 
   changeType(e: any) {
-    switch (e.target.value) {
-      case "R-6":
-        this.selectedCalculation = new RSix;
-        break;
-      default:
-        break;
-    }
+    this.types.flowingTypes.forEach(element => {
+      if (element.name == e.target.value) {
+        this.selectedCalculation = element;
+      }
+    });
   }
 
   calculate() {

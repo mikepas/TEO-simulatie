@@ -1,10 +1,10 @@
 <div class="menu-container">
     <div class="row">
         <div class="col-md">
-            <a class="btn btn-link menu-link" (click)="toSimulation()">Simulatie</a>
+            <a routerLinkActive="is-active" class="btn btn-link menu-link" [routerLink]="[simulationUrl]">Simulatie</a>
         </div>
         <div class="col-md">
-            <a class="btn btn-link menu-link" (click)="toFormula()">Formules</a>
+            <a routerLinkActive="is-active" class="btn btn-link menu-link" [routerLink]="[wikiUrl]">Wiki</a>
         </div>
     </div>
 </div>

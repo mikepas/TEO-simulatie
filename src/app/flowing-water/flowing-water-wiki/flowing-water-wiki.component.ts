@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Types } from '../../models/Types';
 
 @Component({
   selector: 'app-flowing-water-wiki',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flowing-water-wiki.component.scss']
 })
 export class FlowingWaterWikiComponent implements OnInit {
+  types: Types;
 
-  constructor() { }
+  constructor() {
+    this.types = new Types();
+  }
 
   ngOnInit(): void {
   }

@@ -3,7 +3,7 @@ import { Formula } from './Formula';
 import { Reference } from './Reference';
 import { Input } from './Input';
 
-export class RSix implements Calculation {
+export class RSeven implements Calculation {
     name: string;
     formulas: Formula[];
     references: Reference[];
@@ -11,18 +11,20 @@ export class RSix implements Calculation {
     inputs: Input[];
 
     constructor() {
-        this.name = "R-6";
+        this.name = "R-7";
         this.formulas = [
-            new Formula("Formula 1", "A + B = C"),
-            new Formula("Formula 2", "A + B + C = D")
+            new Formula("Formula 1", "X + Y = Z"),
+            new Formula("Formula 2", "X + Y + Z = Q")
         ];
         this.references = [
-            new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+            new Reference("referentie 2", "https://m.youtube.com/watch?v=5aopMm7UGYA")
         ];
         this.mixingZoneDistance = 0;
         this.inputs = [
-            new Input("A", "number", 0, "number"),
-            new Input("B", "number", 0, "number")
+            new Input("X", "number", 0, "number"),
+            new Input("Y", "number", 0, "number"),
+            new Input("Z", "number", 0, "number")
         ];
     }
 
@@ -33,6 +35,6 @@ export class RSix implements Calculation {
             results.push(this.inputs[index].input);
         });
     
-        this.mixingZoneDistance = (+results[0]) + (+results[1]);
+        this.mixingZoneDistance = (+results[0]) + (+results[1]) + (+results[2]);
     }
 }
