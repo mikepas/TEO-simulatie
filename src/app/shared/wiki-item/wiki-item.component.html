@@ -2,8 +2,9 @@
 <div class="content">
     <h2>Formules</h2>
     <div *ngFor="let f of type?.formulas" class="content">
-        <b>{{ f.name }}</b>
-        <p>{{ f.formula }}</p>
+        <h5>{{ f.name }}</h5>
+        <p>{{ f.description }}</p>
+        <p><b>Formule:</b> {{ f.formula }}</p>
         <br>
     </div>
     <h2>Referenties</h2>

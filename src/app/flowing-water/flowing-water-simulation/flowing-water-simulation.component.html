@@ -1,8 +1,9 @@
 <div class="row">
     <div class="col-md-6">
+        <span>Type: </span>
         <select (change)="changeType($event)">
             <option *ngFor="let c of types.flowingTypes">{{c.name}}</option>
-            </select>
+        </select>
         <h1>Invoerwaardes</h1>
         <div class="input-container">
             <div *ngFor="let i of selectedCalculation.inputs" class="row">
