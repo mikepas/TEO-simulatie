@@ -25,52 +25,62 @@
     "Blankvoorn": {
       "MaxTemperature": 27,
       "MinTemperature": 10,
-      "flowRateTolerance": 0.75
+      "flowRateTolerance": 0.75,
+      "speed": 1.1
     },
     "Baars": {
       "MaxTemperature": 24,
       "MinTemperature": 4,
-      "flowRateTolerance": 1.8
+      "flowRateTolerance": 1.8,
+      "speed": 1.4
     },
     "Brasem": {
       "MaxTemperature": 30.2,
       "MinTemperature": 4,
-      "flowRateTolerance": 2.7
+      "flowRateTolerance": 2.7,
+      "speed": 0.8
     },
     "Ruisvoorn": {
       "MaxTemperature": 31.2,
       "MinTemperature": 10,
-      "flowRateTolerance": 1.35
+      "flowRateTolerance": 1.35,
+      "speed": 1.14
     },
     "Pos": {
       "MaxTemperature": 28,
       "MinTemperature": 12,
-      "flowRateTolerance": 0.75
+      "flowRateTolerance": 0.75,
+      "speed": 1.3
     },
     "Zeelt": {
       "MaxTemperature": 31.2,
       "MinTemperature": 15,
-      "flowRateTolerance": 2.1
+      "flowRateTolerance": 2.1,
+      "speed": 1.4
     },
     "Alver": {
       "MaxTemperature": 37.7,
       "MinTemperature": 8,
-      "flowRateTolerance": 0.51
+      "flowRateTolerance": 0.51,
+      "speed": 0.34
     },
     "Riviergrondel": {
       "MaxTemperature": 27.2,
       "MinTemperature": 6,
-      "flowRateTolerance": 0.6
+      "flowRateTolerance": 0.6,
+      "speed": 0.5
     },
     "Winde": {
       "MaxTemperature": 26.6,
       "MinTemperature": 2,
-      "flowRateTolerance": 0.9
+      "flowRateTolerance": 0.9,
+      "speed": 1.5
     },
     "Snoekbaars": {
       "MaxTemperature": 35.4,
       "MinTemperature": 10,
-      "flowRateTolerance": 2.4
+      "flowRateTolerance": 2.4,
+      "speed": 1.8
     }
   }
 }

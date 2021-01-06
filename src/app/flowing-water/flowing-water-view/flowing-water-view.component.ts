@@ -15,8 +15,8 @@ export class FlowingWaterViewComponent implements DoCheck {
   flowingRateTableList = [[""]];
   flowRateNumber = 1.25;
 
-
   @Input()calculation: Calculation | undefined;
+  tempCelsius = 0;
 
   constructor() { }
   ngDoCheck(): void {
@@ -25,7 +25,8 @@ export class FlowingWaterViewComponent implements DoCheck {
 
   GenerateTemperatureTable(flowRate:Number, temperature?: number) {
     if(temperature != undefined) {
-      temperature = this.calculation.
+      this.tempCelsius = temperature-15;
+      temperature -= 15; // needs change
       this.temperatureTableList = [];
       let row = [];
 
