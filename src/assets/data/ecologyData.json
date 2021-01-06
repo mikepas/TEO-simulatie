@@ -1,24 +1,24 @@
 {
   "Planktons": {
     "Cladocera": {
-      "stressTemperatures": [0, 34, 37, 40, 40.1],
+      "stressTemperatures": [0, 34, 37, 40],
       "decrease": ["0%", "50-80%", "95-100%", "100%"],
-      "increase": ["Ja", "Nee", "Nee", "Nee"]
+      "increase": ["Ja", "Nee", "Nee", "Nee", "Nee"]
     },
     "Copepoda": {
       "stressTemperatures": [0, 37, 40, 40.1],
-      "decrease": ["0%", "50%", "50-80%"],
-      "increase": ["Ja", "Nee", "Nee"]
+      "decrease": ["0%", "50%", "50-80%", "100%"],
+      "increase": ["Ja", "Nee", "Nee", "Nee"]
     },
     "Rotatoria": {
-      "stressTemperatures": [0, 37, 40],
-      "decrease": ["0%", "0-50%", "50-80%"],
-      "increase": ["ja", "Nee", "Nee"]
+      "stressTemperatures": [0, 37, 40, 40.1],
+      "decrease": ["0%", "0-50%", "50-80%", "100%"],
+      "increase": ["ja", "Nee", "Nee", "Nee"]
     },
     "Diatomeeen": {
-      "stressTemperatures": [0, 34, 37, 40],
-      "decrease": ["0%", "< 25%", "25-50%", "> 50%"],
-      "increase": ["ja", "Nee", "Nee", "Nee"]
+      "stressTemperatures": [0, 34, 37, 40, 40.1],
+      "decrease": ["0%", "< 25%", "25-50%", "> 50%", "100%"],
+      "increase": ["ja", "Nee", "Nee", "Nee", "Nee"]
     }
   },
   "Fishes": {

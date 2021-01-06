@@ -25,6 +25,7 @@ export class FlowingWaterViewComponent implements DoCheck {
 
   GenerateTemperatureTable(flowRate:Number, temperature?: number) {
     if(temperature != undefined) {
+      temperature = this.calculation.
       this.temperatureTableList = [];
       let row = [];
 
