@@ -21,66 +21,66 @@
       "increase": ["ja", "Nee", "Nee", "Nee", "Nee"]
     }
   },
-  "Fishes": {
+  "Vissen": {
     "Blankvoorn": {
       "MaxTemperature": 27,
       "MinTemperature": 10,
-      "flowRateTolerance": 0.75,
-      "speed": 1.1
+      "flowRateTolerance": 1.1,
+      "MatingTemperature": "12-17"
     },
     "Baars": {
       "MaxTemperature": 24,
       "MinTemperature": 4,
-      "flowRateTolerance": 1.8,
-      "speed": 1.4
+      "flowRateTolerance": 1.4,
+      "MatingTemperature": "8-14"
     },
     "Brasem": {
       "MaxTemperature": 30.2,
       "MinTemperature": 4,
-      "flowRateTolerance": 2.7,
-      "speed": 0.8
+      "flowRateTolerance": 0.8,
+      "MatingTemperature": "14-17"
     },
     "Ruisvoorn": {
       "MaxTemperature": 31.2,
       "MinTemperature": 10,
-      "flowRateTolerance": 1.35,
-      "speed": 1.14
+      "flowRateTolerance": 1.14,
+      "MatingTemperature": "> 15"
     },
     "Pos": {
       "MaxTemperature": 28,
       "MinTemperature": 12,
-      "flowRateTolerance": 0.75,
-      "speed": 1.3
+      "flowRateTolerance": 1.3,
+      "MatingTemperature": "12-17"
     },
     "Zeelt": {
       "MaxTemperature": 31.2,
       "MinTemperature": 15,
-      "flowRateTolerance": 2.1,
-      "speed": 1.4
+      "flowRateTolerance": 1.4,
+      "MatingTemperature": "18-20"
     },
     "Alver": {
       "MaxTemperature": 37.7,
       "MinTemperature": 8,
-      "flowRateTolerance": 0.51,
-      "speed": 0.34
+      "flowRateTolerance": 0.34,
+      "MatingTemperature": "12-18"
     },
     "Riviergrondel": {
       "MaxTemperature": 27.2,
       "MinTemperature": 6,
-      "flowRateTolerance": 0.6,
-      "speed": 0.5
+      "flowRateTolerance": 0.5,
+      "MatingTemperature": "12-17"
     },
     "Winde": {
       "MaxTemperature": 26.6,
       "MinTemperature": 2,
-      "flowRateTolerance": 0.9,
-      "speed": 1.5
+      "flowRateTolerance": 1.5,
+      "MatingTemperature": "8-13"
     },
     "Snoekbaars": {
       "MaxTemperature": 35.4,
       "MinTemperature": 10,
-      "flowRateTolerance": 2.4,
-      "speed": 1.8
+      "flowRateTolerance": 1.8,
+      "MatingTemperature": "6-14"
     }
   }
 }

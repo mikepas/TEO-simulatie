@@ -13,40 +13,25 @@ export class FlowingWaterViewComponent implements DoCheck {
   private jsonData = EcologyData;
   temperatureTableList = [[""]];
   flowingRateTableList = [[""]];
-  flowRateNumber = 1.25;
 
   @Input()calculation: Calculation | undefined;
+  flowRateNumber = 0;
   tempCelsius = 0;
-
   constructor() { }
   ngDoCheck(): void {
-    this.GenerateTemperatureTable(this.flowRateNumber, this.calculation?.deltaT);
+    this.GenerateTemperatureTable();
+    this.GeneratetubeVelocityTable();
   }
 
-  GenerateTemperatureTable(flowRate:Number, temperature?: number) {
-    if(temperature != undefined) {
-      this.tempCelsius = temperature-15;
-      temperature -= 15; // needs change
-      this.temperatureTableList = [];
-      let row = [];
+  GeneratetubeVelocityTable() {
+    this.flowingRateTableList = [];
+    let row = [];
+    if(this.calculation != undefined){
+      this.flowRateNumber = this.calculation?.tubeVelocity;
 
-      //Generate rows for fishes
-      for (const [key, value] of Object.entries(this.jsonData.Fishes)) {
+      for (const [key, value] of Object.entries(this.jsonData.Vissen)) {
         row.push(key);
-        if(temperature >= value.MaxTemperature || temperature < value.MinTemperature) {
-          row.push("Nee"); // toename
-          row.push("Ja"); // afname
-        } else if (temperature >= value.MinTemperature && temperature < value.MaxTemperature) {
-          row.push("Nee"); //toename
-          row.push("Nee"); // afname
-        } else {
-          row.push("Nee"); //toename
-          row.push("ja"); // afname
-        }
-        this.temperatureTableList.push(row);
-        row = [];
-        row.push(key);
-        if((value.flowRateTolerance < flowRate)) {
+        if((value.flowRateTolerance < this.flowRateNumber)) {
           row.push("-"); // toename
           row.push("Ja"); // afname
         } else {
@@ -56,16 +41,48 @@ export class FlowingWaterViewComponent implements DoCheck {
         this.flowingRateTableList.push(row);
         row = [];
       }
+    }
+  }
+
+  GenerateTemperatureTable() {
+    if(this.calculation != undefined) {
+      this.tempCelsius = this.calculation?.inputs[7].input - this.calculation?.deltaT;
+      this.tempCelsius.toFixed(0);
+
+      this.temperatureTableList = [];
+      let row = [];
+
+      //Generate rows for Vissen
+      for (const [key, value] of Object.entries(this.jsonData.Vissen)) {
+        row.push(key);
+        if(this.tempCelsius >= value.MaxTemperature || this.tempCelsius < value.MinTemperature) {
+          row.push(value.MatingTemperature);
+          row.push("Nee"); // toename
+          row.push("Ja"); // afname
+        } else if (this.tempCelsius >= value.MinTemperature && this.tempCelsius < value.MaxTemperature) {
+          row.push(value.MatingTemperature);
+          row.push("Nee"); //toename
+          row.push("Nee"); // afname
+        } else {
+          row.push(value.MatingTemperature);
+          row.push("Nee"); //toename
+          row.push("ja"); // afname
+        }
+        this.temperatureTableList.push(row);
+
+        row = [];
+      }
 
       // Generate rows for Planktons
       for (const [key, value] of Object.entries(this.jsonData.Planktons)) {
         row.push(key);
         let temp = 0;
         for (let i = 0; i < value.stressTemperatures.length; i++) {
-          if(temperature >= value.stressTemperatures[i]) {
+          if(this.tempCelsius >= value.stressTemperatures[i]) {
             temp = i;
           }
         }
+        row.push("-");
         row.push(value.increase[temp]);
         row.push(value.decrease[temp]);
         this.temperatureTableList.push(row);

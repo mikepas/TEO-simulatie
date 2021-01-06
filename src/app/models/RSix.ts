@@ -51,12 +51,8 @@ export class RSix implements Calculation {
 
         let J = (+results[0]) * 3600000000;
         let s = (31556926 * ((+results[2]) / 365) * ((+results[3]) / 24));
-<<<<<<< HEAD
-
-=======
         let v = ((+results[1]) / ((+results[5]) * (+results[6]) * 0.9));
 
->>>>>>> a5c8ea3d60505065213092c56dce52d78068e63e
         this.deltaT = (J) / (4186 * (997 * (+results[1]) * s));
         this.minimalV = (((J) / s) / (4186 * (+results[4]))) / 997 * 1000;
 
