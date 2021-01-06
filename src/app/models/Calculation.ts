@@ -8,8 +8,9 @@ export interface Calculation {
     references: Reference[];
     inputs: Input[];
     deltaT: number;
-    MinimalV: number;
+    minimalV: number;
     heatCloudSeconds: number;
     heatCloudLenght: number;
+    tubeVelocity: number;
     calculate: () => void;
 }

@@ -21,9 +21,10 @@
     </div>
     <div class="col-md-6">
         <img class="simulation-svg" src="assets/simulation-r6.svg"/>
-        <p *ngIf="selectedCalculation.deltaT != 0"><b>Temperatuursverschil gehele lichaam:</b> {{ selectedCalculation.deltaT }}°C</p>
-        <p *ngIf="selectedCalculation.MinimalV != 0"><b>Minimaal debiet:</b> {{ selectedCalculation.MinimalV }}L/s</p>
-        <p *ngIf="selectedCalculation.heatCloudSeconds != 0"><b>Secondes voor vermenging:</b> {{ selectedCalculation.heatCloudSeconds }}s</p>
-        <p *ngIf="selectedCalculation.heatCloudLenght != 0"><b>Warmtewolk afstand:</b> {{ selectedCalculation.heatCloudLenght }}m</p>
+        <p *ngIf="selectedCalculation.deltaT != 0"><b>Temperatuursverschil gehele lichaam:</b> {{ selectedCalculation.deltaT | number }}°C</p>
+        <p *ngIf="selectedCalculation.minimalV != 0"><b>Minimaal debiet:</b> {{ selectedCalculation.minimalV | number }}L/s</p>
+        <p *ngIf="selectedCalculation.heatCloudSeconds != 0"><b>Secondes voor vermenging:</b> {{ selectedCalculation.heatCloudSeconds | number }}s</p>
+        <p *ngIf="selectedCalculation.heatCloudLenght != 0"><b>Warmtewolk afstand:</b> {{ selectedCalculation.heatCloudLenght | number }}m</p>
+        <p *ngIf="selectedCalculation.tubeVelocity != 0"><b>Buis inzuigznelheid:</b> {{ selectedCalculation.tubeVelocity | number }}m/s</p>
     </div>
 </div>
