@@ -31,11 +31,10 @@ export class FlowingWaterViewComponent implements DoCheck {
 
       for (const [key, value] of Object.entries(this.jsonData.Vissen)) {
         row.push(key);
-        if((value.flowRateTolerance < this.flowRateNumber)) {
-          row.push("-"); // toename
+        row.push(value.MaxSpeed+"m/s");
+        if((value.MaxSpeed < this.flowRateNumber)) {
           row.push("Ja"); // afname
         } else {
-          row.push("-"); // toename
           row.push("Nee"); // afname
         }
         this.flowingRateTableList.push(row);
