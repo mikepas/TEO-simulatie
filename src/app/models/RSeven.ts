@@ -9,9 +9,10 @@ export class RSeven implements Calculation {
     references: Reference[];
     deltaT: number;
     inputs: Input[];
-    MinimalV: number;
+    minimalV: number;
     heatCloudSeconds: number;
     heatCloudLenght: number;
+    tubeVelocity: number;
 
     constructor() {
         this.name = "R-7";
@@ -29,9 +30,10 @@ export class RSeven implements Calculation {
             new Input("Z", "", 0, "number")
         ];
         this.deltaT = 0;
-        this.MinimalV = 0;
+        this.minimalV = 0;
         this.heatCloudSeconds = 0;
         this.heatCloudLenght = 0;
+        this.tubeVelocity = 0;
     }
 
     public calculate() : void {      
