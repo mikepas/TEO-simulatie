@@ -24,16 +24,16 @@ export class RSix implements Calculation {
             new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
         ];
         this.inputs = [
-            new Input("Jaarlijkse energiebehoefte", "MWh", 2610, "number"),
-            new Input("Debiet", "m3/s", 4, "number"),
-            new Input("Aantal dagen per jaar", "", 186, "number"),
-            new Input("Aantal uren per dag", "", 8, "number"),
-            new Input("Temperatuursverandering opgenomen water", "°C", 4, "number"),
-            new Input("Breedte rivier", "m", 20, "number"),
-            new Input("Diepte rivier", "m", 2.5, "number"),
-            new Input("Watertemperatuur", "°C", 15, "number"),
-            new Input("Windsnelheid", "m/s", 5, "number"),
-            new Input("Inlaat buisdiameter", "mm", 200, "number")
+            new Input("Jaarlijkse energiebehoefte", "De jaarlijkse warmteenergiebehoefte die nodig is, uitgedrukt in MWh.", "MWh", 2610, "number"),
+            new Input("Debiet", "Het debiet dat door het waterlichaam stroomt, uitgedrukt in m3/s.", "m3/s", 4, "number"),
+            new Input("Aantal dagen per jaar", "Aantal dagen dat het systeem actief is / verwacht te zijn.", "", 186, "number"),
+            new Input("Aantal uren per dag", "Aantal uren dat het systeem per dag actief is.", "", 8, "number"),
+            new Input("temp. verandering door TSA", "Het temperatuurverschil dat de TSA(warmtewisselaar) veroorzaakt, uitgedrukt in °C.", "°C", 4, "number"),
+            new Input("Breedte rivier", "De breedte van het het waterlichaam, uitgedrukt in meters.", "m", 20, "number"),
+            new Input("Diepte rivier", "Het diepste punt van het waterlichaam, uitgedrukt in meters", "m", 2.5, "number"),
+            new Input("Watertemperatuur", "De temperatuur van het waterlichaam op het punt van de inzuiging, uitgedrukt in °C.", "°C", 15, "number"),
+            new Input("Windsnelheid", "De gemiddelde windsnelheid op het punt waar het water wordt ingezogen en geloosd, uitgedrukt in m/s.", "m/s", 5, "number"),
+            new Input("Inlaat buisdiameter", "De diameter van de buis waar het water wordt ingezogen, uitgedrukt in millimeters.", "mm", 200, "number")
         ];
         this.deltaT = 0;
         this.minimalV = 0;

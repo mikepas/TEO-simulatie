@@ -9,6 +9,10 @@
             <div *ngFor="let i of selectedCalculation.inputs" class="row">
                 <div class="col-xl">
                     <label for="{{i.name}}">{{i.name}}:</label>
+                    <ng-template #popContent>{{ i.description }}</ng-template>
+                    <span class="custom-popover" [ngbPopover]="popContent">
+                        <i class="bi bi-info-circle"></i>
+                    </span>
                 </div>
                 <div class="col-xl">
                     <input id="{{i.name}}" [(ngModel)]="i.input" type="{{i.type}}"/>

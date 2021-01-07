@@ -25,9 +25,9 @@ export class RSeven implements Calculation {
             new Reference("referentie 2", "https://m.youtube.com/watch?v=5aopMm7UGYA")
         ];
         this.inputs = [
-            new Input("X", "", 0, "number"),
-            new Input("Y", "", 0, "number"),
-            new Input("Z", "", 0, "number")
+            new Input("X", "", "", 0, "number"),
+            new Input("Y", "", "", 0, "number"),
+            new Input("Z", "", "", 0, "number")
         ];
         this.deltaT = 0;
         this.minimalV = 0;
