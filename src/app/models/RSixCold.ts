@@ -1,9 +1,9 @@
-import { Calculation } from '../models/Calculation';
+import { Calculation } from './Calculation';
 import { Formula } from './Formula';
 import { Reference } from './Reference';
 import { Input } from './Input';
 
-export class RSix implements Calculation {
+export class RSixCold implements Calculation {
     name: string;
     formulas: Formula[];
     references: Reference[];
@@ -12,10 +12,12 @@ export class RSix implements Calculation {
     minimalV: number;
     heatCloudSeconds: number;
     heatCloudLenght: number;
+    heatCloud: number[];
     tubeVelocity: number;
+    errors: string[];
 
     constructor() {
-        this.name = "R-6";
+        this.name = "R-6 koudelozing";
         this.formulas = [
             new Formula("Formula 1", "Uitleg 1", "A + B = C"),
             new Formula("Formula 2", "Uitleg 2", "A + B + C = D")
@@ -39,15 +41,19 @@ export class RSix implements Calculation {
         this.minimalV = 0;
         this.heatCloudSeconds = 0;
         this.heatCloudLenght = 0;
+        this.heatCloud = [];
         this.tubeVelocity = 0;
+        this.errors = [];
     }
 
-    public calculate() : void {      
+    public calculate() : void {
         let results: number[] = [];
     
         Object.keys(this.inputs).forEach((value: string, index: number, array: string[]) => {
             results.push(this.inputs[index].input);
         });
+        
+        this.validate(results);
 
         let J = (+results[0]) * 3600000000;
         let s = (31556926 * ((+results[2]) / 365) * ((+results[3]) / 24));
@@ -61,5 +67,52 @@ export class RSix implements Calculation {
         this.heatCloudSeconds = heatCloud;
         this.heatCloudLenght = heatCloud * v;
         this.tubeVelocity = 1.273 * (this.minimalV / 1000) / Math.pow((+results[9]) / 1000, 2);
+
+        this.heatCloud = [];
+        let outgoingTemp = (+results[4]);
+
+        for (let index = 0; index < 4; index++) {
+            if (outgoingTemp == 0)
+                break;
+
+            if (index != 0) {
+                this.heatCloud.push(outgoingTemp -= ((+results[4]) / 4));
+            } else {
+                this.heatCloud.push(outgoingTemp);
+            }
+        }
+    }
+
+    validate(results: number[]) {
+        this.errors = [];
+
+        if ((+results[0]) == 0 || (+results[1]) == 0 || (+results[2]) == 0 || (+results[3]) == 0) {
+            this.errors.push("Niet alle invoerwaardes ingevult om het temperatuurverschil van het gehele lichaam te berekenen.");
+        }
+
+        if ((+results[0]) == 0 || (+results[2]) == 0 || (+results[3]) == 0 || (+results[4]) == 0) {
+            this.errors.push("Niet alle invoerwaardes ingevult om het minimale inzuigdebiet te berekenen.");
+        }
+
+        if ((+results[0]) == 0 || (+results[1]) == 0 || (+results[2]) == 0 || (+results[3]) == 0 || (+results[4]) == 0 || (+results[5]) == 0 || (+results[6]) == 0 || (+results[7]) == 0 || (+results[8]) == 0) {
+            this.errors.push("Niet alle invoerwaardes ingevult om het aantal seconden van de vermenging van de koudewolk te berekenen.");
+        }
+
+        if ((+results[0]) == 0 || (+results[1]) == 0 || (+results[2]) == 0 || (+results[3]) == 0 || (+results[4]) == 0 || (+results[5]) == 0 || (+results[6]) == 0 || (+results[7]) == 0 || (+results[8]) == 0) {
+            this.errors.push("Niet alle invoerwaardes ingevult om het aantal meter van de vermenging van de koudewolk te berekenen.");
+        }
+
+        if ((+results[0]) == 0 || (+results[2]) == 0 || (+results[3]) == 0 || (+results[4]) == 0 || (+results[9]) == 0) {
+            this.errors.push("Niet alle invoerwaardes ingevult om de snelheid van het water in de inzuigbuis te berekenen.");
+        }
+
+        if ((+results[4]) == 0) {
+            this.errors.push("Niet alle invoerwaardes ingevult om de temperaturen in de mengzone te kunnen tonen.");
+        }
+
+        if (this.errors.length > 0) 
+            return false
+
+        return true;
     }
 }

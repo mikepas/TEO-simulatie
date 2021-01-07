@@ -1,10 +1,14 @@
+<h2>1. Kies type stromend water</h2>
+<div class="type-selector">
+    <span>Type: </span>
+    <select class="custom-select" (change)="changeType($event)">
+        <option *ngFor="let c of types.flowingTypes">{{c.name}}</option>
+    </select>
+</div>
+<hr>
 <div class="row">
-    <div class="col-md-6">
-        <span>Type: </span>
-        <select (change)="changeType($event)">
-            <option *ngFor="let c of types.flowingTypes">{{c.name}}</option>
-        </select>
-        <h1>Invoerwaardes</h1>
+    <div class="col-lg-6">
+        <h2>2. Invoerwaardes invullen</h2>
         <div class="input-container">
             <div *ngFor="let i of selectedCalculation.inputs" class="row">
                 <div class="col-xl">
@@ -20,15 +24,25 @@
                 </div>
             </div>
         </div>
-        <br>
         <button class="btn btn-primary" (click)="calculate()">Berekenen</button>
     </div>
-    <div class="col-md-6">
-        <img class="simulation-svg" src="assets/simulation-r6.svg"/>
-        <p *ngIf="selectedCalculation.deltaT != 0"><b>Temperatuursverschil gehele lichaam:</b> {{ selectedCalculation.deltaT | number }}°C</p>
-        <p *ngIf="selectedCalculation.minimalV != 0"><b>Minimaal debiet:</b> {{ selectedCalculation.minimalV | number }}L/s</p>
-        <p *ngIf="selectedCalculation.heatCloudSeconds != 0"><b>Secondes voor vermenging:</b> {{ selectedCalculation.heatCloudSeconds | number }}s</p>
-        <p *ngIf="selectedCalculation.heatCloudLenght != 0"><b>Warmtewolk afstand:</b> {{ selectedCalculation.heatCloudLenght | number }}m</p>
-        <p *ngIf="selectedCalculation.tubeVelocity != 0"><b>Buis inzuigznelheid:</b> {{ selectedCalculation.tubeVelocity | number }}m/s</p>
+    <div class="col-lg-6">
+        <h3 class="simulation-header">Visualisatie</h3>
+        <div class="simulation">
+            <img class="simulation-img" src="assets/river.png"/>
+            <p class="moveable1" *ngIf="selectedCalculation.heatCloud[0]">{{ selectedCalculation.heatCloud[0] | number: '.1-2' }}°C</p>
+            <p class="moveable2" *ngIf="selectedCalculation.heatCloud[1]">{{ selectedCalculation.heatCloud[1] | number: '.1-2' }}°C</p>
+            <p class="moveable3" *ngIf="selectedCalculation.heatCloud[2]">{{ selectedCalculation.heatCloud[2] | number: '.1-2' }}°C</p>
+            <p class="moveable4" *ngIf="selectedCalculation.heatCloud[3]">{{ selectedCalculation.heatCloud[3] | number: '.1-2' }}°C</p>
+            <p class="moveable5" *ngIf="selectedCalculation.heatCloudLenght != 0">{{ selectedCalculation.heatCloudLenght | number: '.1-2' }}m</p>
+            <p class="moveable6" *ngIf="selectedCalculation.heatCloudSeconds != 0">{{ selectedCalculation.heatCloudSeconds | number: '.1-1' }}s</p>
+        </div>
+        <p *ngIf="selectedCalculation.deltaT != 0"><b>Temperatuursverschil gehele lichaam:</b> {{ selectedCalculation.deltaT | number: '.1-2' }}°C</p>
+        <p *ngIf="selectedCalculation.minimalV != 0"><b>Minimaal inzuigdebiet:</b> {{ selectedCalculation.minimalV | number: '.1-1'  }}L/s</p>
+        <p *ngIf="selectedCalculation.tubeVelocity != 0"><b>Buis inzuigznelheid:</b> {{ selectedCalculation.tubeVelocity | number: '.1-2' }}m/s</p>
+        <div *ngFor="let e of selectedCalculation.errors" class="alert alert-warning" role="alert">
+            {{ e }}
+        </div>
     </div>
 </div>
+<hr>
