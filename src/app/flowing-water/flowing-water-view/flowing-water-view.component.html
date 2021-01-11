@@ -1,46 +1,130 @@
-<div class="table-responsive" id="TableArea">
-  <table class="ecologyTable table table-striped table-bordered table-hover" id="temperatureTable" width="100%">
+<div class="table-responsive container" id="TableArea">
+  <div class="row">
+
+    <table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="temperatureTable" width="100%">
+          <thead>
+            <tr>
+                <th>Temperatuur gehele lichaam<span class="h4">{{this.tempCelsius.toFixed(2)}}°C</span></th>
+            </tr>
+        </thead>
         <thead>
-          <tr>
-              <th>Temperatuur <span class="h4">{{this.tempCelsius.toFixed(0)}}°C</span></th>
-          </tr>
-      </thead>
+            <tr>
+                <th>Organismen</th>
+                <th>Paai temperatuur</th>
+                <th>Toename</th>
+                <th>Afname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of temperatureTableList">
+              <td>{{o[0]}}</td>
+              <td>{{o[1]}}</td>
+              <td>{{o[2]}}</td>
+              <td>{{o[3]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="temperatureTable" width="100%">
       <thead>
-          <tr>
-              <th>Organismen</th>
-              <th>Paai temperatuur</th>
-              <th>Toename</th>
-              <th>Afname</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let o of temperatureTableList">
-            <td>{{o[0]}}</td>
-            <td>{{o[1]}}</td>
-            <td>{{o[2]}}</td>
-            <td>{{o[3]}}</td>
-          </tr>
-      </tbody>
-  </table>
-  <table class="ecologyTable table table-striped table-bordered table-hover" id="flowingWaterTable" width="100%">
+        <tr>
+            <th>Temperatuur lozingspunt <span class="h4">{{this.dischargePoint.toFixed(2)}}°C</span></th>
+        </tr>
+    </thead>
     <thead>
-      <tr>
-          <th>Inlaatsnelheid <span class="h4">{{this.flowRateNumber.toFixed(2)}} m3/s</span></th>
+        <tr>
+            <th>Organismen</th>
+            <th>Paai temperatuur</th>
+            <th>Toename</th>
+            <th>Afname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of dischargePointTableList">
+          <td>{{o[0]}}</td>
+          <td>{{o[1]}}</td>
+          <td>{{o[2]}}</td>
+          <td>{{o[3]}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+    <table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="flowingWaterTable" width="100%">
+      <thead>
+        <tr>
+            <th>Inlaatsnelheid <span class="h4">{{this.flowRateNumber.toFixed(2)}} m3/s</span></th>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <th>Organismen</th>
+            <th>Zwemsnelheid</th>
+            <th>Afname</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of flowingRateTableList">
+        <td>{{o[0]}}</td>
+        <td>{{o[1]}}</td>
+        <td>{{o[2]}}</td>
       </tr>
-  </thead>
-  <thead>
-      <tr>
-          <th>Organismen</th>
-          <th>Zwemsnelheid</th>
-          <th>Afname</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let o of flowingRateTableList">
-      <td>{{o[0]}}</td>
-      <td>{{o[1]}}</td>
-      <td>{{o[2]}}</td>
-    </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
   </div>
+</div>
+<div class="container infoArea">
+
+    <div *ngIf="option === 'R-6 koudelozing'; then show; else notShow">
+    </div>
+    <ng-template #show>
+      <div class="row">
+        <div class="imgContent col-lg-6">
+          <p>
+            <b>Effecten  van een  koudelozingop fysisch-chemische  en biologische  processen  en de zuurstofconcentratie. Zie toelichting in de tekst.</b>
+              <br>
+            Gesimplificeerd schema van een temperatuurstijging op de concentraties zuurstof (O), stikstof (N), fosfor (P), koolstof (C) en zwavel (S) in de waterkolom. PP verwijst naar primaire productie. Overgenomen uit Kosten, 2011a. Effecten van temperatuurdaling is hieraan omgekeerd evenredig.
+
+          </p>
+          <img class="img" src="'./../../../../assets/images/img_koude_lozing.PNG">
+          <p>Temperatuur en zuurstofbehoefte karakteristieken van zoetwater vissoorten die verwacht kunnen worden in stadswateren. Gebaseerd op Verdonschot et al. (2007) en Sportvisserij Nederland</p>
+          <img class="img" src="'./../../../../assets/images/temp_vissen.PNG">
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li>Zuurstofconcentratie wordt sterk bepaald door watertemperatuur. Er kan meer zuurstof oplossen bij lagere temperatuur en het metabolisme van organismen neemt af bij lagere watertemperatuur (zowel zuurstof productie als consumptie nemen af). Het effect van temperatuur op de zuurstofconcentratie verloopt binnen enkele uren.</li>
+            <li>Over het algemeen neemt de respiratie (consumptie) sterker af dan de productie. Samen met een verhoogde oplosbaarheid leidt dit ertoe dat de zuurstofconcentratie in het water stijgt.</li>
+            <li>Bij een lagere watertemperatuur zijn er kleinere dag-nacht fluctuaties en een kleinere kans op zuurstofloosheid.</li>
+            <li>Bij lagere watertemperatuur is er een lagere interne belasting (vrijkomen uit sediment) van fosfaat en stikstof, en lagere CO2 concentratie in het water.</li>
+          </ul>
+
+          <h5>Meer verwachte effecten koudelozingen</h5>
+          <table class="table table-bordered">
+            <tr>
+              <td>Algen</td>
+              <td>
+                <ul>
+                  <li>Er is weinig tot geen effect op fotosynthese en een beperkt effect op groeisnelheid zolang T niet lager dan 12 °C wordt. Bij lagere T is de kans op dominantie van blauwalgen kleiner.</li>
+                  <li>In een natuurlijk systeem is er een fluctuatie van soorten in het seizoen. Als de T meer constant is door continue koudelozing, wordt een nivellerend effect op de diversiteit verwacht.</li>
+                  <li>Afhankelijk van de timing in het seizoen, zal een verkorting van het groeiseizoen optreden.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Waterplanten</td>
+              <td>Fotosynthese en groeisnelheid zijn lager en er is minder biomassa ontwikkeling bij lagere T. Verwacht wordt dat een ΔT van -3 °C al effect zal hebben op deze processen. Afhankelijk van de timing in het seizoen, zal een verkorting van het groeiseizoen optreden.</td>
+            </tr>
+            <tr>
+              <td>Macrofauna</td>
+              <td>Geen eenduidig beeld.<br>
+                Belangrijk om te weten zijn de drempelwaarde voor start ontwikkeling en adulte ontwikkeling. Dit is een kennisleemte.</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </ng-template>
+
+    <ng-template #notShow>
+
+    </ng-template>
+</div>

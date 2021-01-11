@@ -82,5 +82,11 @@
       "MaxSpeed": 1.8,
       "MatingTemperature": "6-14"
     }
+  },
+  "Fytoplankton": {
+    "Groenalgen": {
+      "MaxTemperature": 15,
+      "MinTemperature": 20
+    }
   }
 }

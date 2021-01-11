@@ -12,14 +12,21 @@ import  EcologyData from './../../../assets/data/ecologyData.json';
 export class FlowingWaterViewComponent implements DoCheck {
   private jsonData = EcologyData;
   temperatureTableList = [[""]];
+  dischargePointTableList = [[""]];
   flowingRateTableList = [[""]];
 
   @Input()calculation: Calculation | undefined;
   flowRateNumber = 0;
   tempCelsius = 0;
+  dischargePoint = 0;
+  option:string = "";
+
   constructor() { }
+
   ngDoCheck(): void {
+    console.log(this.calculation);
     this.GenerateTemperatureTable();
+    this.GenerateDischargePointTable();
     this.GeneratetubeVelocityTable();
   }
 
@@ -28,6 +35,9 @@ export class FlowingWaterViewComponent implements DoCheck {
     let row = [];
     if(this.calculation != undefined){
       this.flowRateNumber = this.calculation?.tubeVelocity;
+      this.option = this.calculation.name;
+      console.log(this.option);
+
 
       for (const [key, value] of Object.entries(this.jsonData.Vissen)) {
         row.push(key);
@@ -45,9 +55,8 @@ export class FlowingWaterViewComponent implements DoCheck {
 
   GenerateTemperatureTable() {
     if(this.calculation != undefined) {
-      this.tempCelsius = this.calculation?.inputs[7].input - this.calculation?.deltaT;
-      this.tempCelsius.toFixed(0);
-
+      this.tempCelsius = this.calculation?.inputs[7].input - this.calculation?.deltaT; // temperature - temperatureverschil
+      this.tempCelsius;
       this.temperatureTableList = [];
       let row = [];
 
@@ -89,4 +98,51 @@ export class FlowingWaterViewComponent implements DoCheck {
       }
     }
   }
+
+  GenerateDischargePointTable() {
+    if(this.calculation != undefined) {
+      this.dischargePoint = this.tempCelsius - this.calculation?.inputs[4].input;
+      this.dischargePointTableList = [];
+      let row = [];
+
+      //Generate rows for Vissen
+      for (const [key, value] of Object.entries(this.jsonData.Vissen)) {
+        row.push(key);
+        if(this.dischargePoint >= value.MaxTemperature || this.dischargePoint < value.MinTemperature) {
+          row.push(value.MatingTemperature);
+          row.push("Nee"); // toename
+          row.push("Ja"); // afname
+        } else if (this.dischargePoint >= value.MinTemperature && this.dischargePoint < value.MaxTemperature) {
+          row.push(value.MatingTemperature);
+          row.push("Nee"); //toename
+          row.push("Nee"); // afname
+        } else {
+          row.push(value.MatingTemperature);
+          row.push("Nee"); //toename
+          row.push("ja"); // afname
+        }
+        this.dischargePointTableList.push(row);
+
+        row = [];
+      }
+
+      // Generate rows for Planktons
+      for (const [key, value] of Object.entries(this.jsonData.Planktons)) {
+        row.push(key);
+        let temp = 0;
+        for (let i = 0; i < value.stressTemperatures.length; i++) {
+          if(this.dischargePoint >= value.stressTemperatures[i]) {
+            temp = i;
+          }
+        }
+        row.push("-");
+        row.push(value.increase[temp]);
+        row.push(value.decrease[temp]);
+        this.dischargePointTableList.push(row);
+        row = [];
+      }
+    }
+  }
+
+
 }

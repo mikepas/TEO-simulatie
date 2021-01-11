@@ -1,17 +1,28 @@
 #TableArea{
   margin: 20px 0;
 }
+.infoArea {
+  margin-bottom: 20px;
+  .imgContent {
+    img{
+      margin: 10px 0;
+      width: 100%;
+    }
+}
+
+
+  margin-bottom: 50px;
+}
 .ecologyTable{
+  border-width: 0;
   display: inline-block;
   width: 50%;
-
-}
-.ecologyTable{
   white-space: normal;
+  margin-top: 50px;
 }
 tbody {
-  display:block;
   height:200px;
+  display:block;
   overflow:auto;
 }
 thead, tbody tr {
