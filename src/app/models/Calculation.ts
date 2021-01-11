@@ -11,6 +11,9 @@ export interface Calculation {
     minimalV: number;
     heatCloudSeconds: number;
     heatCloudLenght: number;
+    heatCloud: number[];
     tubeVelocity: number;
+    errors: string[];
     calculate: () => void;
+    validate: (results: number[]) => void;
 }

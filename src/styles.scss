@@ -6,3 +6,22 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px ;
+    }
+}
+
+@media (min-width: 1700px) {
+    .container {
+        max-width: 1600px ;
+    }
+}
+
+@media (min-width: 2000px) {
+    .container {
+        max-width: 1900px ;
+    }
+}

@@ -1,6 +1,6 @@
 import { Calculation } from "./Calculation";
 import { RSeven } from "./RSeven";
-import { RSix } from "./RSix";
+import { RSixCold } from "./RSixCold";
 
 export class Types {
     public flowingTypes: Calculation[] = [];
@@ -8,7 +8,7 @@ export class Types {
 
     constructor() {
         this.flowingTypes = [
-            new RSix,
+            new RSixCold,
             new RSeven
         ];
     }

@@ -12,7 +12,9 @@ export class RSeven implements Calculation {
     minimalV: number;
     heatCloudSeconds: number;
     heatCloudLenght: number;
+    heatCloud: number[];
     tubeVelocity: number;
+    errors: string[];
 
     constructor() {
         this.name = "R-7";
@@ -25,15 +27,17 @@ export class RSeven implements Calculation {
             new Reference("referentie 2", "https://m.youtube.com/watch?v=5aopMm7UGYA")
         ];
         this.inputs = [
-            new Input("X", "", 0, "number"),
-            new Input("Y", "", 0, "number"),
-            new Input("Z", "", 0, "number")
+            new Input("X", "", "", 0, "number"),
+            new Input("Y", "", "", 0, "number"),
+            new Input("Z", "", "", 0, "number")
         ];
         this.deltaT = 0;
         this.minimalV = 0;
         this.heatCloudSeconds = 0;
         this.heatCloudLenght = 0;
+        this.heatCloud = [];
         this.tubeVelocity = 0;
+        this.errors = [];
     }
 
     public calculate() : void {      
@@ -44,5 +48,9 @@ export class RSeven implements Calculation {
         });
     
         this.deltaT = (+results[0]) + (+results[1]) + (+results[2]);
+    }
+
+    validate(results: number[]) {
+        
     }
 }

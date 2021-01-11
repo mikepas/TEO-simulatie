@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FlowingWaterSimulationComponent } from './flowing-water-simulation/flowing-water-simulation.component';
 import { FlowingWaterWikiComponent } from './flowing-water-wiki/flowing-water-wiki.component';
 import { FlowingWaterViewComponent } from './flowing-water-view/flowing-water-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [FlowingWaterComponent, FlowingWaterSimulationComponent, FlowingWaterWikiComponent, FlowingWaterViewComponent],
@@ -15,7 +16,8 @@ import { FlowingWaterViewComponent } from './flowing-water-view/flowing-water-vi
     FlowingWaterRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ]
 })
 export class FlowingWaterModule { }
