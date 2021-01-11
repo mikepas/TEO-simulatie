@@ -4,13 +4,13 @@
     <div *ngFor="let f of type?.formulas" class="content">
         <h5>{{ f.name }}</h5>
         <p>{{ f.description }}</p>
-        <p><b>Formule:</b> {{ f.formula }}</p>
+        <p *ngIf="f.formula"><b>Formule:</b> {{ f.formula }}</p>
         <br>
     </div>
     <h2>Referenties</h2>
     <ul>
         <li *ngFor="let r of type?.references">
-            <a href="{{ r.url }}">{{ r.name }}</a>
+            <p [innerHTML]="r"></p>
         </li>
     </ul>
 </div>

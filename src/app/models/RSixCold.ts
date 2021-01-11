@@ -1,12 +1,11 @@
 import { Calculation } from './Calculation';
 import { Formula } from './Formula';
-import { Reference } from './Reference';
 import { Input } from './Input';
 
 export class RSixCold implements Calculation {
     name: string;
     formulas: Formula[];
-    references: Reference[];
+    references: string[];
     inputs: Input[];
     deltaT: number;
     minimalV: number;
@@ -19,11 +18,10 @@ export class RSixCold implements Calculation {
     constructor() {
         this.name = "R-6 koudelozing";
         this.formulas = [
-            new Formula("Formula 1", "Uitleg 1", "A + B = C"),
-            new Formula("Formula 2", "Uitleg 2", "A + B + C = D")
+            new Formula("Berekeningen R-6 koudelozing", "De berekening die voor het type R-6 koudelozing zijn gebruikt staan in het onderstaande document 'The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem'. De berekeningen staan op pagina 15 t/m 18.", ""),
         ];
         this.references = [
-            new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            "M. Ramakers. (2020). The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem. 's Hertogenbosch. Opgehaald van <a href='https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626'>https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626</a>."
         ];
         this.inputs = [
             new Input("Jaarlijkse energiebehoefte", "De jaarlijkse warmteenergiebehoefte die nodig is, uitgedrukt in MWh.", "MWh", 2610, "number"),

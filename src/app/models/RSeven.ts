@@ -1,12 +1,11 @@
 import { Calculation } from '../models/Calculation';
 import { Formula } from './Formula';
-import { Reference } from './Reference';
 import { Input } from './Input';
 
 export class RSeven implements Calculation {
     name: string;
     formulas: Formula[];
-    references: Reference[];
+    references: string[];
     deltaT: number;
     inputs: Input[];
     minimalV: number;
@@ -23,8 +22,7 @@ export class RSeven implements Calculation {
             new Formula("Formula 2", "Uitleg 2", "X + Y + Z = Q")
         ];
         this.references = [
-            new Reference("Click me", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
-            new Reference("referentie 2", "https://m.youtube.com/watch?v=5aopMm7UGYA")
+            "Referentie 1"
         ];
         this.inputs = [
             new Input("X", "", "", 0, "number"),
