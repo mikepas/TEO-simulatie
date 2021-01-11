@@ -15,7 +15,7 @@ export class FlowingWaterViewComponent implements DoCheck {
   dischargePointTableList = [[""]];
   flowingRateTableList = [[""]];
 
-  @Input()calculation: Calculation | undefined;
+  @Input() calculation!: Calculation;
   flowRateNumber = 0;
   tempCelsius = 0;
   dischargePoint = 0;
@@ -23,20 +23,25 @@ export class FlowingWaterViewComponent implements DoCheck {
 
   constructor() { }
 
+  ngOnInit(): void {}
+
   ngDoCheck(): void {
-    console.log(this.calculation);
-    this.GenerateTemperatureTable();
-    this.GenerateDischargePointTable();
-    this.GeneratetubeVelocityTable();
+    if(this.calculation.deltaT !== 0) {
+      this.GenerateTemperatureTable();
+      this.GenerateDischargePointTable();
+      this.GeneratetubeVelocityTable();
+    }
   }
+
 
   GeneratetubeVelocityTable() {
     this.flowingRateTableList = [];
     let row = [];
+    let test = this.calculation?.tubeVelocity;
+    console.log("test" + this.calculation.name);
     if(this.calculation != undefined){
-      this.flowRateNumber = this.calculation?.tubeVelocity;
       this.option = this.calculation.name;
-      console.log(this.option);
+      //console.log(this.option);
 
 
       for (const [key, value] of Object.entries(this.jsonData.Vissen)) {
