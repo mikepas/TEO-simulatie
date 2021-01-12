@@ -34,9 +34,9 @@ export class RSixCold implements Calculation {
             new Input("Inlaat buisdiameter", "De diameter van de buis waar het water wordt ingezogen, uitgedrukt in millimeters.", "mm", 200, "number")
         ];
         this.results = [
-            new Result("Temperatuursverschil gehele lichaam", "", 0, "°C"),
-            new Result("Minimaal inzuigdebiet", "", 0, "L/s"),
-            new Result("Buis inzuigznelheid", "", 0, "m/s"),
+            new Result("Temperatuursverschil gehele lichaam", "Dit is het temperatuursverschil van het water in de rivier dat langs het systeem stroomt in de tijd dat het systeem aan staat.", 0, "°C"),
+            new Result("Minimaal inzuigdebiet", "Het debiet dat moet worden ingezogen door het systeem.", 0, "L/s"),
+            new Result("Buis inzuigznelheid", "De snelheid dat het water wordt ingezogen door de buis.", 0, "m/s")
         ];
         this.mixingZoneResult = new MixingZoneResult();
         this.errors = [];
