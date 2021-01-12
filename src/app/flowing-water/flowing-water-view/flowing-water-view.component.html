@@ -4,7 +4,7 @@
     <table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="temperatureTable" width="100%">
           <thead>
             <tr>
-                <th>Temperatuur gehele lichaam<span class="h4">{{this.tempCelsius.toFixed(2)}}°C</span></th>
+                <th>Temperatuur gehele lichaam <span class="h4">{{this.tempCelsius.toFixed(2)}}°C</span></th>
             </tr>
         </thead>
         <thead>
@@ -58,7 +58,7 @@
     <thead>
         <tr>
             <th>Organismen</th>
-            <th>Zwemsnelheid</th>
+            <th>Max zwemsnelheid</th>
             <th>Afname</th>
         </tr>
     </thead>
@@ -74,7 +74,7 @@
 </div>
 <div class="container infoArea">
 
-    <div *ngIf="option === 'R-6 koudelozing'; then show; else notShow">
+    <div *ngIf="showInfoData; then show; else notShow">
     </div>
     <ng-template #show>
       <div class="row">
@@ -121,6 +121,7 @@
           </div>
         </div>
         <div class="col-lg-6">
+          <h5>Sterfte en maaswijdte</h5>
           <p>
             Bij de centrale Bergum en de Flevocentrale, is onderzocht wat de effecten op vislarven zijn van verschillende maaswijdtes van de zeef en verschillende temperatuurschokken in de koelwaterketen. Resultaten van het onderzoek zijn in de tabel hieronder opgenomen. Tijdens het onderzoek bij de centrale Bergum waren de lengtes van spiering en baars respectievelijk 6 – 18 mm en 6 – 11 mm. Het sterftepercentage van spiering na passage van de condensor bedroeg 74. De sterfte was na 24 uur opgelopen naar 87%. Dat wil zeggen dat de helft van de spieringlarven die in eerste instantie de passage van de condensor had overleefd binnen 24 uur alsnog stierf. De sterfte bij larven van baarsachtigen was aanzienlijk lager.
           </p>
@@ -130,7 +131,7 @@
           </div>
           <br>
           <p>
-            islarven,  die  het  gehele  koelwatersysteem  passeren,  ondervinden  sterfte door  een  combinatie  van  mechanische  beschadigingen en  de  opwarming  in  de  condensor. Bij de centrale Bergum blijkt bij vislarven tot een lengte van 3 à 4 cm een sterfte  op  te  treden  van  34%  voor  baarsachtigen  (snoekbaars,  baars,  pos)  en  75%  voor spiering.  De  aanstroomsnelheid  voor  het  scherm  betrof  0,7  –  0,8  m/s  en  de trommelzeven hebben een maaswijdte van 5x5 mm.
+            Vislarven die  het  gehele  koelwatersysteem  passeren,  ondervinden  sterfte door  een  combinatie  van  mechanische  beschadigingen en  de  opwarming  in  de  condensor. Bij de centrale Bergum blijkt bij vislarven tot een lengte van 3 à 4 cm een sterfte  op  te  treden  van  34%  voor  baarsachtigen  (snoekbaars,  baars,  pos)  en  75%  voor spiering.  De  aanstroomsnelheid  voor  het  scherm  betrof  0,7  –  0,8  m/s  en  de trommelzeven hebben een maaswijdte van 5x5 mm.
           </p>
           <span>Mortaliteit van ingezogen vis op de trommelzeef (5 x 5mm) van de centrale Bergum</span>
           <table class="table table-bordered">
