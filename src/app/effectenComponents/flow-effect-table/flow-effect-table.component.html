@@ -1,0 +1,21 @@
+<table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="flowingWaterTable" width="100%">
+  <thead>
+    <tr>
+        <th>Inlaatsnelheid <span class="h4">{{this.flowRateNumber.toFixed(2)}} m3/s</span></th>
+    </tr>
+</thead>
+<thead>
+    <tr>
+        <th>Organismen</th>
+        <th>Max zwemsnelheid</th>
+        <th>Afname</th>
+    </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let o of flowingRateTableList">
+    <td>{{o[0]}}</td>
+    <td>{{o[1]}}</td>
+    <td>{{o[2]}}</td>
+  </tr>
+</tbody>
+</table>

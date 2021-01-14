@@ -2,23 +2,19 @@
   "Planktons": {
     "Cladocera": {
       "stressTemperatures": [0, 34, 37, 40],
-      "decrease": ["0%", "50-80%", "95-100%", "100%"],
-      "increase": ["Ja", "Nee", "Nee", "Nee", "Nee"]
+      "decrease": ["Nee", "50-80%", "95-100%", "100%"]
     },
     "Copepoda": {
       "stressTemperatures": [0, 37, 40, 40.1],
-      "decrease": ["0%", "50%", "50-80%", "100%"],
-      "increase": ["Ja", "Nee", "Nee", "Nee"]
+      "decrease": ["Nee", "50%", "50-80%", "100%"]
     },
     "Rotatoria": {
       "stressTemperatures": [0, 37, 40, 40.1],
-      "decrease": ["0%", "0-50%", "50-80%", "100%"],
-      "increase": ["ja", "Nee", "Nee", "Nee"]
+      "decrease": ["Nee", "0-50%", "50-80%", "100%"]
     },
     "Diatomeeen": {
       "stressTemperatures": [0, 34, 37, 40, 40.1],
-      "decrease": ["0%", "< 25%", "25-50%", "> 50%", "100%"],
-      "increase": ["ja", "Nee", "Nee", "Nee", "Nee"]
+      "decrease": ["Nee", "< 25%", "25-50%", "> 50%", "100%"]
     }
   },
   "Vissen": {
@@ -59,7 +55,7 @@
       "MatingTemperature": "18-20"
     },
     "Alver": {
-      "MaxTemperature": 37.7,
+      "MaxTemperature": 30,
       "MinTemperature": 8,
       "MaxSpeed": 0.34,
       "MatingTemperature": "12-18"
