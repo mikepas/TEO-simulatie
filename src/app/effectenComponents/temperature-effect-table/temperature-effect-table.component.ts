@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Calculation } from 'src/app/models/Calculation';
 import  EcologyData from 'src/assets/data/ecologyData.json';
 
@@ -7,7 +7,7 @@ import  EcologyData from 'src/assets/data/ecologyData.json';
   templateUrl: './temperature-effect-table.component.html',
   styleUrls: ['./temperature-effect-table.component.scss']
 })
-export class TemperatureEffectTableComponent implements OnInit {
+export class TemperatureEffectTableComponent implements DoCheck, OnChanges {
   private jsonData = EcologyData;
   temperatureTableList = [[""]];
   @Input() calculation!: Calculation;
@@ -15,9 +15,26 @@ export class TemperatureEffectTableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.GenerateTemperatureTable();
+  ngOnChanges(changes: SimpleChanges): void {
+    // when switching to another type, execute clear.
+    this.Clear();
   }
+
+  ngDoCheck(): void {
+
+    if(this.calculation.deltaT !== 0) {
+      console.log("yooo");
+      //generate cold water data
+      this.GenerateTemperatureTable();
+    }
+
+  }
+
+  Clear() {
+    this.temperatureTableList = [];
+  }
+
+
 
   GenerateTemperatureTable() {
     this.tempCelsius = this.calculation?.inputs[7].input - this.calculation?.deltaT; // temperature - temperatureverschil
