@@ -13,8 +13,8 @@
             <div *ngFor="let i of selectedCalculation.inputs" class="row">
                 <div class="col-xl">
                     <label for="{{i.name}}">{{i.name}}:</label>
-                    <ng-template #popContent>{{ i.description }}</ng-template>
-                    <span class="custom-popover" [ngbPopover]="popContent">
+                    <ng-template #popContentInput>{{ i.description }}</ng-template>
+                    <span *ngIf="i.description != ''" class="custom-popover" [ngbPopover]="popContentInput">
                         <i class="bi bi-info-circle"></i>
                     </span>
                 </div>
@@ -28,18 +28,26 @@
     </div>
     <div class="col-lg-6">
         <h3 class="simulation-header">Visualisatie</h3>
+        <p>In de afbeelding hieronder komt na het berekenen de afstand en tijd van de warmtewolk/koudewolk te zien. Ook zie je de temperatuursverschillen binnen in de wolk. De TSA is de afkorting voor een warmtewisselaar.</p>
         <div class="simulation">
             <img class="simulation-img" src="assets/river.png"/>
-            <p class="moveable1" *ngIf="selectedCalculation.heatCloud[0]">{{ selectedCalculation.heatCloud[0] | number: '.1-2' }}°C</p>
-            <p class="moveable2" *ngIf="selectedCalculation.heatCloud[1]">{{ selectedCalculation.heatCloud[1] | number: '.1-2' }}°C</p>
-            <p class="moveable3" *ngIf="selectedCalculation.heatCloud[2]">{{ selectedCalculation.heatCloud[2] | number: '.1-2' }}°C</p>
-            <p class="moveable4" *ngIf="selectedCalculation.heatCloud[3]">{{ selectedCalculation.heatCloud[3] | number: '.1-2' }}°C</p>
-            <p class="moveable5" *ngIf="selectedCalculation.heatCloudLenght != 0">{{ selectedCalculation.heatCloudLenght | number: '.1-2' }}m</p>
-            <p class="moveable6" *ngIf="selectedCalculation.heatCloudSeconds != 0">{{ selectedCalculation.heatCloudSeconds | number: '.1-1' }}s</p>
+            <p class="moveable1" *ngIf="selectedCalculation.mixingZoneResult.temps[0]">{{ selectedCalculation.mixingZoneResult.temps[0] | number: '.1-2' }}°C</p>
+            <p class="moveable2" *ngIf="selectedCalculation.mixingZoneResult.temps[1]">{{ selectedCalculation.mixingZoneResult.temps[1] | number: '.1-2' }}°C</p>
+            <p class="moveable3" *ngIf="selectedCalculation.mixingZoneResult.temps[2]">{{ selectedCalculation.mixingZoneResult.temps[2] | number: '.1-2' }}°C</p>
+            <p class="moveable4" *ngIf="selectedCalculation.mixingZoneResult.temps[3]">{{ selectedCalculation.mixingZoneResult.temps[3] | number: '.1-2' }}°C</p>
+            <p class="moveable5" *ngIf="selectedCalculation.mixingZoneResult.length != 0">{{ selectedCalculation.mixingZoneResult.length | number: '.1-2' }}m</p>
+            <p class="moveable6" *ngIf="selectedCalculation.mixingZoneResult.time != 0">{{ selectedCalculation.mixingZoneResult.time | number: '.1-2' }}s</p>
         </div>
-        <p *ngIf="selectedCalculation.deltaT != 0"><b>Temperatuursverschil gehele lichaam:</b> {{ selectedCalculation.deltaT | number: '.1-2' }}°C</p>
-        <p *ngIf="selectedCalculation.minimalV != 0"><b>Minimaal inzuigdebiet:</b> {{ selectedCalculation.minimalV | number: '.1-1'  }}L/s</p>
-        <p *ngIf="selectedCalculation.tubeVelocity != 0"><b>Buis inzuigznelheid:</b> {{ selectedCalculation.tubeVelocity | number: '.1-2' }}m/s</p>
+        <ng-container *ngFor="let result of selectedCalculation.results">
+            <ng-template #popContentResult>{{ result.description }}</ng-template>
+            <p *ngIf="result.value != 0">
+                <b>{{ result.name }}:</b> 
+                {{ result.value | number: '.1-2' }}{{ result.unit }}
+                <span *ngIf="result.description != ''" class="custom-popover" [ngbPopover]="popContentResult">
+                    <i class="bi bi-info-circle"></i>
+                </span>
+            </p>
+        </ng-container>
         <div *ngFor="let e of selectedCalculation.errors" class="alert alert-warning" role="alert">
             {{ e }}
         </div>

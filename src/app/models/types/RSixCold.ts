@@ -1,18 +1,16 @@
-import { Calculation } from './Calculation';
-import { Formula } from './Formula';
-import { Input } from './Input';
+import { Calculation } from '../Calculation';
+import { Formula } from '../Formula';
+import { Input } from '../Input';
+import { MixingZoneResult } from '../mixingZoneResults';
+import { Result } from '../Result';
 
 export class RSixCold implements Calculation {
     name: string;
     formulas: Formula[];
     references: string[];
     inputs: Input[];
-    deltaT: number;
-    minimalV: number;
-    heatCloudSeconds: number;
-    heatCloudLenght: number;
-    heatCloud: number[];
-    tubeVelocity: number;
+    results: Result[];
+    mixingZoneResult: MixingZoneResult;
     errors: string[];
 
     constructor() {
@@ -35,12 +33,12 @@ export class RSixCold implements Calculation {
             new Input("Windsnelheid", "De gemiddelde windsnelheid op het punt waar het water wordt ingezogen en geloosd, uitgedrukt in m/s.", "m/s", 5, "number"),
             new Input("Inlaat buisdiameter", "De diameter van de buis waar het water wordt ingezogen, uitgedrukt in millimeters.", "mm", 200, "number")
         ];
-        this.deltaT = 0;
-        this.minimalV = 0;
-        this.heatCloudSeconds = 0;
-        this.heatCloudLenght = 0;
-        this.heatCloud = [];
-        this.tubeVelocity = 0;
+        this.results = [
+            new Result("Temperatuursverschil gehele lichaam", "Dit is het temperatuursverschil van het water in de rivier dat langs het systeem stroomt in de tijd dat het systeem aan staat.", 0, "°C"),
+            new Result("Minimaal inzuigdebiet", "Het debiet dat moet worden ingezogen door het systeem.", 0, "L/s"),
+            new Result("Buis inzuigznelheid", "De snelheid dat het water wordt ingezogen door de buis.", 0, "m/s")
+        ];
+        this.mixingZoneResult = new MixingZoneResult();
         this.errors = [];
     }
 
@@ -57,16 +55,16 @@ export class RSixCold implements Calculation {
         let s = (31556926 * ((+results[2]) / 365) * ((+results[3]) / 24));
         let v = ((+results[1]) / ((+results[5]) * (+results[6]) * 0.9));
     
-        this.deltaT = (J) / (4186 * (997 * (+results[1]) * s));
-        this.minimalV = (((J) / s) / (4186 * (+results[4]))) / 997 * 1000;
+        this.results[0].value = - (J) / (4186 * (997 * (+results[1]) * s));
+        this.results[1].value = (((J) / s) / (4186 * (+results[4]))) / 997 * 1000;
 
         let heatCloud = Math.sqrt((((J / s)) / ((+results[5]) * v * (Math.abs( -(4.48 + 0.049 * (+results[7]) + ((3.5 + 2 * (+results[8])) * Math.pow(5000000 / ((+results[5]) * (+results[6]) * 0.9), 0.05))) * (1.12 + 0.018 * (+results[7]) + 0.00158 * Math.pow((+results[7]), 2)) * (+results[4]))))));
         
-        this.heatCloudSeconds = heatCloud;
-        this.heatCloudLenght = heatCloud * v;
-        this.tubeVelocity = 1.273 * (this.minimalV / 1000) / Math.pow((+results[9]) / 1000, 2);
+        this.mixingZoneResult.time = heatCloud;
+        this.mixingZoneResult.length = heatCloud * v;
+        this.results[2].value = 1.273 * (this.results[1].value / 1000) / Math.pow((+results[9]) / 1000, 2);
 
-        this.heatCloud = [];
+        this.mixingZoneResult.temps = [];
         let outgoingTemp = (+results[4]);
 
         for (let index = 0; index < 4; index++) {
@@ -74,9 +72,9 @@ export class RSixCold implements Calculation {
                 break;
 
             if (index != 0) {
-                this.heatCloud.push(outgoingTemp -= ((+results[4]) / 4));
+                this.mixingZoneResult.temps.push(outgoingTemp -= ((+results[4]) / 4));
             } else {
-                this.heatCloud.push(outgoingTemp);
+                this.mixingZoneResult.temps.push(outgoingTemp);
             }
         }
     }
@@ -107,10 +105,5 @@ export class RSixCold implements Calculation {
         if ((+results[4]) == 0) {
             this.errors.push("Niet alle invoerwaardes ingevult om de temperaturen in de mengzone te kunnen tonen.");
         }
-
-        if (this.errors.length > 0) 
-            return false
-
-        return true;
     }
 }
