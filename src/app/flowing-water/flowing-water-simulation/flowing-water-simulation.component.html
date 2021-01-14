@@ -14,7 +14,7 @@
                 <div class="col-xl">
                     <label for="{{i.name}}">{{i.name}}:</label>
                     <ng-template #popContentInput>{{ i.description }}</ng-template>
-                    <span class="custom-popover" [ngbPopover]="popContentInput">
+                    <span *ngIf="i.description != ''" class="custom-popover" [ngbPopover]="popContentInput">
                         <i class="bi bi-info-circle"></i>
                     </span>
                 </div>
@@ -43,7 +43,7 @@
             <p *ngIf="result.value != 0">
                 <b>{{ result.name }}:</b> 
                 {{ result.value | number: '.1-2' }}{{ result.unit }}
-                <span class="custom-popover" [ngbPopover]="popContentResult">
+                <span *ngIf="result.description != ''" class="custom-popover" [ngbPopover]="popContentResult">
                     <i class="bi bi-info-circle"></i>
                 </span>
             </p>

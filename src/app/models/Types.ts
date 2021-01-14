@@ -4,12 +4,13 @@ import { RSixCold } from "./types/RSixCold";
 
 export class Types {
     public flowingTypes: Calculation[] = [];
-    public ftagnantTypes: Calculation[] = [];
+    public stagnantTypes: Calculation[] = [];
 
     constructor() {
         this.flowingTypes = [
             new RSixCold,
             new RSeven
         ];
+        this.stagnantTypes = [];
     }
 }
