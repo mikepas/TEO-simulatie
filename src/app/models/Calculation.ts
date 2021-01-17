@@ -1,17 +1,15 @@
 import { Formula } from "./Formula";
 import { Input } from "./Input";
+import { MixingZoneResult } from "./mixingZoneResults";
+import { Result } from "./Result";
 
 export interface Calculation {
     name: string;
     formulas: Formula[];
     references: string[];
     inputs: Input[];
-    deltaT: number;
-    minimalV: number;
-    heatCloudSeconds: number;
-    heatCloudLenght: number;
-    heatCloud: number[];
-    tubeVelocity: number;
+    results: Result[];
+    mixingZoneResult: MixingZoneResult;
     errors: string[];
     calculate: () => void;
     validate: (results: number[]) => void;

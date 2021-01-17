@@ -1,18 +1,16 @@
-import { Calculation } from '../models/Calculation';
-import { Formula } from './Formula';
-import { Input } from './Input';
+import { Calculation } from '../Calculation';
+import { Formula } from '../Formula';
+import { Input } from '../Input';
+import { MixingZoneResult } from '../mixingZoneResults';
+import { Result } from '../Result';
 
 export class RSeven implements Calculation {
     name: string;
     formulas: Formula[];
     references: string[];
-    deltaT: number;
     inputs: Input[];
-    minimalV: number;
-    heatCloudSeconds: number;
-    heatCloudLenght: number;
-    heatCloud: number[];
-    tubeVelocity: number;
+    results: Result[];
+    mixingZoneResult: MixingZoneResult;
     errors: string[];
 
     constructor() {
@@ -29,12 +27,10 @@ export class RSeven implements Calculation {
             new Input("Y", "", "", 0, "number"),
             new Input("Z", "", "", 0, "number")
         ];
-        this.deltaT = 0;
-        this.minimalV = 0;
-        this.heatCloudSeconds = 0;
-        this.heatCloudLenght = 0;
-        this.heatCloud = [];
-        this.tubeVelocity = 0;
+        this.results = [
+            new Result("Uitkomst", "", 0, "")
+        ];
+        this.mixingZoneResult = new MixingZoneResult();
         this.errors = [];
     }
 
@@ -45,10 +41,15 @@ export class RSeven implements Calculation {
             results.push(this.inputs[index].input);
         });
     
-        this.deltaT = (+results[0]) + (+results[1]) + (+results[2]);
+        this.results[0].value = (+results[0]) + (+results[1]) + (+results[2]);
+
+        this.validate([this.results[0].value]);
     }
 
     validate(results: number[]) {
-        
+        this.errors = [];
+
+        if (results[0] == 0)
+            this.errors.push("De uitkomst is 0.");
     }
 }
