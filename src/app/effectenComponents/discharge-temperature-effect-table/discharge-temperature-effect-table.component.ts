@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit } from '@angular/core';
 import { Calculation } from 'src/app/models/Calculation';
 import  EcologyData from 'src/assets/data/ecologyData.json';
 
@@ -7,21 +7,30 @@ import  EcologyData from 'src/assets/data/ecologyData.json';
   templateUrl: './discharge-temperature-effect-table.component.html',
   styleUrls: ['./discharge-temperature-effect-table.component.scss']
 })
-export class DischargeTemperatureEffectTableComponent implements OnInit {
+export class DischargeTemperatureEffectTableComponent implements DoCheck, OnChanges {
   private jsonData = EcologyData;
   dischargePointTableList = [[""]];
   @Input() calculation!: Calculation;
   dischargePoint:number = 0;
-  tempCelsius:number = 0;
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.GenerateDischargePointTable();
+  ngOnChanges() {
+    this.Clear();
+  }
+
+  ngDoCheck(): void {
+    if(this.calculation.results[0].value !== 0) {
+      this.GenerateDischargePointTable();
+    }
+  }
+
+  Clear() {
+    this.dischargePointTableList = [];
   }
 
   GenerateDischargePointTable() {
-    this.dischargePoint = this.tempCelsius - this.calculation?.inputs[4].input;
+    this.dischargePoint = this.calculation.inputs[7].input - this.calculation.inputs[4].input;
     this.dischargePointTableList = [];
     let row = [];
 

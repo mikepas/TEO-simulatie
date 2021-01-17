@@ -22,23 +22,19 @@ export class TemperatureEffectTableComponent implements DoCheck, OnChanges {
 
   ngDoCheck(): void {
 
-    if(this.calculation.deltaT !== 0) {
-      console.log("yooo");
+    console.log(this.calculation);
+    if(this.calculation.results[0].value !== 0) {
       //generate cold water data
       this.GenerateTemperatureTable();
     }
-
   }
 
   Clear() {
     this.temperatureTableList = [];
   }
 
-
-
   GenerateTemperatureTable() {
-    this.tempCelsius = this.calculation?.inputs[7].input - this.calculation?.deltaT; // temperature - temperatureverschil
-    this.tempCelsius;
+    this.tempCelsius = this.calculation?.inputs[7].input - this.calculation.results[0].value; // temperature - temperatureverschil
     this.temperatureTableList = [];
     let row = [];
 
