@@ -4,6 +4,10 @@
   width: 50%;
   white-space: normal;
   margin-top: 50px;
+  .infoTip {
+    float: right;
+    cursor: pointer;
+  }
 }
 tbody {
   height:200px;

@@ -41,9 +41,9 @@ export class FlowEffectTableComponent implements DoCheck, OnChanges {
       row.push(key);
       row.push(value.MaxSpeed+"m/s");
       if((value.MaxSpeed < this.flowRateNumber)) {
-        row.push("Ja"); // afname
+        row.push("Nee"); // Survival change
       } else {
-        row.push("Nee"); // afname
+        row.push("Ja"); // Survival change
       }
       this.flowingRateTableList.push(row);
       row = [];

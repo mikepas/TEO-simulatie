@@ -1,7 +1,11 @@
 <table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="temperatureTable" width="100%">
   <thead>
     <tr>
-        <th>Temperatuur lozingspunt <span class="h4">{{this.dischargePoint.toFixed(2)}}°C</span></th>
+        <th>Temperatuur lozingspunt <span class="h4">{{this.dischargePoint.toFixed(2)}}°C</span>
+          <span class="infoTip" ngbTooltip="Is de temperatuur van het lozingpunt ideaal voor een bepaald organisme?" triggers="click:blur">
+            <i class="bi bi-info-circle"></i>
+          </span>
+        </th>
     </tr>
 </thead>
 <thead>
