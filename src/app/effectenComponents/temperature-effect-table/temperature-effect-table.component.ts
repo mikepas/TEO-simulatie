@@ -16,13 +16,12 @@ export class TemperatureEffectTableComponent implements DoCheck, OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log("CLEARED");
     // when switching to another type, execute clear.
     this.Clear();
   }
 
   ngDoCheck(): void {
-
-    console.log(this.calculation);
     if(this.calculation.results[0].value !== 0) {
       //generate cold water data
       this.GenerateTemperatureTable();

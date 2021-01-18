@@ -6,8 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cold-water-effect-info.component.scss']
 })
 export class ColdWaterEffectInfoComponent implements OnInit {
-  @Input() display! :Boolean;
-
   constructor() { }
 
   ngOnInit(): void {

@@ -9,15 +9,19 @@ import  EcologyData from './../../../assets/data/ecologyData.json';
   templateUrl: './flowing-water-view.component.html',
   styleUrls: ['./flowing-water-view.component.scss']
 })
-export class FlowingWaterViewComponent implements DoCheck {
-  showInfoData:boolean = false;
+export class FlowingWaterViewComponent implements DoCheck, OnChanges {
+  option:string = "";
   @Input() calculation!: Calculation;
 
   constructor() { }
 
-  ngDoCheck(): void {
-    // this.option = this.calculation.name;
+  ngOnChanges(changes: SimpleChanges): void {
+    this.option = "";
+  }
 
-      this.showInfoData = true;
+  ngDoCheck(): void {
+    if(this.calculation.results[0].value !== 0) {
+      this.option = this.calculation.name;
+    }
   }
 }

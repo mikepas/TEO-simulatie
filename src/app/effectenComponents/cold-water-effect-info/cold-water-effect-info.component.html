@@ -1,109 +1,100 @@
 <div class="container infoArea">
-
-  <div *ngIf="display; then show; else notShow">
-  </div>
-  <ng-template #show>
-    <div class="row">
-      <div class="imgContent col-lg-6">
-        <p>
-          <b>Effecten  van een  koudelozingop fysisch-chemische  en biologische  processen  en de zuurstofconcentratie. Zie toelichting in de tekst.</b>
-          <br>
-          Gesimplificeerd schema van een temperatuurstijging op de concentraties zuurstof (O), stikstof (N), fosfor (P), koolstof (C) en zwavel (S) in de waterkolom. PP verwijst naar primaire productie. Overgenomen uit Kosten, 2011a. Effecten van temperatuurdaling is hieraan omgekeerd evenredig.
-
-        </p>
-        <img class="img" src="'./../../../../assets/images/img_koude_lozing.PNG">
-        <ul>
-          <li>Zuurstofconcentratie wordt sterk bepaald door watertemperatuur. Er kan meer zuurstof oplossen bij lagere temperatuur en het metabolisme van organismen neemt af bij lagere watertemperatuur (zowel zuurstof productie als consumptie nemen af). Het effect van temperatuur op de zuurstofconcentratie verloopt binnen enkele uren.</li>
-          <li>Over het algemeen neemt de respiratie (consumptie) sterker af dan de productie. Samen met een verhoogde oplosbaarheid leidt dit ertoe dat de zuurstofconcentratie in het water stijgt.</li>
-          <li>Bij een lagere watertemperatuur zijn er kleinere dag-nacht fluctuaties en een kleinere kans op zuurstofloosheid.</li>
-          <li>Bij lagere watertemperatuur is er een lagere interne belasting (vrijkomen uit sediment) van fosfaat en stikstof, en lagere CO2 concentratie in het water.</li>
-        </ul>
-
-        <h5>Meer verwachte effecten koudelozingen</h5>
-        <table class="table table-bordered">
-          <tr>
-            <td>Algen</td>
-            <td>
-              <ul>
-                <li>Er is weinig tot geen effect op fotosynthese en een beperkt effect op groeisnelheid zolang T niet lager dan 12 °C wordt. Bij lagere T is de kans op dominantie van blauwalgen kleiner.</li>
-                <li>In een natuurlijk systeem is er een fluctuatie van soorten in het seizoen. Als de T meer constant is door continue koudelozing, wordt een nivellerend effect op de diversiteit verwacht.</li>
-                <li>Afhankelijk van de timing in het seizoen, zal een verkorting van het groeiseizoen optreden.</li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td>Waterplanten</td>
-            <td>Fotosynthese en groeisnelheid zijn lager en er is minder biomassa ontwikkeling bij lagere T. Verwacht wordt dat een ΔT van -3 °C al effect zal hebben op deze processen. Afhankelijk van de timing in het seizoen, zal een verkorting van het groeiseizoen optreden.</td>
-          </tr>
-          <tr>
-            <td>Macrofauna</td>
-            <td>Geen eenduidig beeld.<br>
-              Belangrijk om te weten zijn de drempelwaarde voor start ontwikkeling en adulte ontwikkeling. Dit is een kennisleemte.</td>
-          </tr>
-        </table>
-        <div class="imgContent">
-          <p>Temperatuur en zuurstofbehoefte karakteristieken van zoetwater vissoorten die verwacht kunnen worden in stadswateren.</p>
-          <img class="img" src="'./../../../../assets/images/temp_vissen.PNG">
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <h5>Sterfte en maaswijdte</h5>
-        <p>
-          Bij de centrale Bergum en de Flevocentrale, is onderzocht wat de effecten op vislarven zijn van verschillende maaswijdtes van de zeef en verschillende temperatuurschokken in de koelwaterketen. Resultaten van het onderzoek zijn in de tabel hieronder opgenomen. Tijdens het onderzoek bij de centrale Bergum waren de lengtes van spiering en baars respectievelijk 6 – 18 mm en 6 – 11 mm. Het sterftepercentage van spiering na passage van de condensor bedroeg 74. De sterfte was na 24 uur opgelopen naar 87%. Dat wil zeggen dat de helft van de spieringlarven die in eerste instantie de passage van de condensor had overleefd binnen 24 uur alsnog stierf. De sterfte bij larven van baarsachtigen was aanzienlijk lager.
-        </p>
-        <span>Sterfte van vislarven als gevolg van passage door de koelwaterketen van de centrale Bergum en Flevocentrale. Het percentage tussen haakjes is de som van directe en uitgestelde sterfte</span>
-        <div class="imgContent">
-          <img class="img" src="'./../../../../assets/images/maaswijdte.PNG">
-        </div>
+  <div class="row">
+    <div class="imgContent col-lg-6">
+      <p>
+        <b>Effecten  van een  koudelozingop fysisch-chemische  en biologische  processen  en de zuurstofconcentratie. Zie toelichting in de tekst.</b>
         <br>
-        <p>
-          Vislarven die  het  gehele  koelwatersysteem  passeren,  ondervinden  sterfte door  een  combinatie  van  mechanische  beschadigingen en  de  opwarming  in  de  condensor. Bij de centrale Bergum blijkt bij vislarven tot een lengte van 3 à 4 cm een sterfte  op  te  treden  van  34%  voor  baarsachtigen  (snoekbaars,  baars,  pos)  en  75%  voor spiering.  De  aanstroomsnelheid  voor  het  scherm  betrof  0,7  –  0,8  m/s  en  de trommelzeven hebben een maaswijdte van 5x5 mm.
-        </p>
-        <span>Mortaliteit van ingezogen vis op de trommelzeef (5 x 5mm) van de centrale Bergum</span>
-        <table class="table table-bordered">
-          <tr>
-            <th>vissoort  </th>
-            <th>lengte vis (mm) </th>
-            <th>mortaliteit (%) </th>
-          </tr>
-          <tr>
-            <td>spiering </td>
-            <td>38 – 73  </td>
-            <td>95</td>
-          </tr>
-          <tr>
-            <td>snoekbaars </td>
-            <td>24 – 66 </td>
-            <td>67</td>
-          </tr>
-          <tr>
-            <td>baars </td>
-            <td>4 – 40</td>
-            <td>65</td>
-          </tr>
-          <tr>
-            <td>pos </td>
-            <td>38 – 76</td>
-            <td>65</td>
-          </tr>
-          <tr>
-            <td>brasem / kolblei </td>
-            <td>40 – 79   </td>
-            <td>64</td>
-          </tr>
-          <tr>
-            <td>blankvoorn </td>
-            <td>39 – 78   </td>
-            <td>25</td>
-          </tr>
+        Gesimplificeerd schema van een temperatuurstijging op de concentraties zuurstof (O), stikstof (N), fosfor (P), koolstof (C) en zwavel (S) in de waterkolom. PP verwijst naar primaire productie. Overgenomen uit Kosten, 2011a. Effecten van temperatuurdaling is hieraan omgekeerd evenredig.
 
-        </table>
+      </p>
+      <img class="img" src="'./../../../../assets/images/img_koude_lozing.PNG">
+      <ul>
+        <li>Zuurstofconcentratie wordt sterk bepaald door watertemperatuur. Er kan meer zuurstof oplossen bij lagere temperatuur en het metabolisme van organismen neemt af bij lagere watertemperatuur (zowel zuurstof productie als consumptie nemen af). Het effect van temperatuur op de zuurstofconcentratie verloopt binnen enkele uren.</li>
+        <li>Over het algemeen neemt de respiratie (consumptie) sterker af dan de productie. Samen met een verhoogde oplosbaarheid leidt dit ertoe dat de zuurstofconcentratie in het water stijgt.</li>
+        <li>Bij een lagere watertemperatuur zijn er kleinere dag-nacht fluctuaties en een kleinere kans op zuurstofloosheid.</li>
+        <li>Bij lagere watertemperatuur is er een lagere interne belasting (vrijkomen uit sediment) van fosfaat en stikstof, en lagere CO2 concentratie in het water.</li>
+      </ul>
+
+      <h5>Meer verwachte effecten koudelozingen</h5>
+      <table class="table table-bordered">
+        <tr>
+          <td>Algen</td>
+          <td>
+            <ul>
+              <li>Er is weinig tot geen effect op fotosynthese en een beperkt effect op groeisnelheid zolang T niet lager dan 12 °C wordt. Bij lagere T is de kans op dominantie van blauwalgen kleiner.</li>
+              <li>In een natuurlijk systeem is er een fluctuatie van soorten in het seizoen. Als de T meer constant is door continue koudelozing, wordt een nivellerend effect op de diversiteit verwacht.</li>
+              <li>Afhankelijk van de timing in het seizoen, zal een verkorting van het groeiseizoen optreden.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Waterplanten</td>
+          <td>Fotosynthese en groeisnelheid zijn lager en er is minder biomassa ontwikkeling bij lagere T. Verwacht wordt dat een ΔT van -3 °C al effect zal hebben op deze processen. Afhankelijk van de timing in het seizoen, zal een verkorting van het groeiseizoen optreden.</td>
+        </tr>
+        <tr>
+          <td>Macrofauna</td>
+          <td>Geen eenduidig beeld.<br>
+            Belangrijk om te weten zijn de drempelwaarde voor start ontwikkeling en adulte ontwikkeling. Dit is een kennisleemte.</td>
+        </tr>
+      </table>
+      <div class="imgContent">
+        <p>Temperatuur en zuurstofbehoefte karakteristieken van zoetwater vissoorten die verwacht kunnen worden in stadswateren.</p>
+        <img class="img" src="'./../../../../assets/images/temp_vissen.PNG">
       </div>
-
     </div>
-  </ng-template>
+    <div class="col-lg-6">
+      <h5>Sterfte en maaswijdte</h5>
+      <p>
+        Bij de centrale Bergum en de Flevocentrale, is onderzocht wat de effecten op vislarven zijn van verschillende maaswijdtes van de zeef en verschillende temperatuurschokken in de koelwaterketen. Resultaten van het onderzoek zijn in de tabel hieronder opgenomen. Tijdens het onderzoek bij de centrale Bergum waren de lengtes van spiering en baars respectievelijk 6 – 18 mm en 6 – 11 mm. Het sterftepercentage van spiering na passage van de condensor bedroeg 74. De sterfte was na 24 uur opgelopen naar 87%. Dat wil zeggen dat de helft van de spieringlarven die in eerste instantie de passage van de condensor had overleefd binnen 24 uur alsnog stierf. De sterfte bij larven van baarsachtigen was aanzienlijk lager.
+      </p>
+      <span>Sterfte van vislarven als gevolg van passage door de koelwaterketen van de centrale Bergum en Flevocentrale. Het percentage tussen haakjes is de som van directe en uitgestelde sterfte</span>
+      <div class="imgContent">
+        <img class="img" src="'./../../../../assets/images/maaswijdte.PNG">
+      </div>
+      <br>
+      <p>
+        Vislarven die  het  gehele  koelwatersysteem  passeren,  ondervinden  sterfte door  een  combinatie  van  mechanische  beschadigingen en  de  opwarming  in  de  condensor. Bij de centrale Bergum blijkt bij vislarven tot een lengte van 3 à 4 cm een sterfte  op  te  treden  van  34%  voor  baarsachtigen  (snoekbaars,  baars,  pos)  en  75%  voor spiering.  De  aanstroomsnelheid  voor  het  scherm  betrof  0,7  –  0,8  m/s  en  de trommelzeven hebben een maaswijdte van 5x5 mm.
+      </p>
+      <span>Mortaliteit van ingezogen vis op de trommelzeef (5 x 5mm) van de centrale Bergum</span>
+      <table class="table table-bordered">
+        <tr>
+          <th>vissoort  </th>
+          <th>lengte vis (mm) </th>
+          <th>mortaliteit (%) </th>
+        </tr>
+        <tr>
+          <td>spiering </td>
+          <td>38 – 73  </td>
+          <td>95</td>
+        </tr>
+        <tr>
+          <td>snoekbaars </td>
+          <td>24 – 66 </td>
+          <td>67</td>
+        </tr>
+        <tr>
+          <td>baars </td>
+          <td>4 – 40</td>
+          <td>65</td>
+        </tr>
+        <tr>
+          <td>pos </td>
+          <td>38 – 76</td>
+          <td>65</td>
+        </tr>
+        <tr>
+          <td>brasem / kolblei </td>
+          <td>40 – 79   </td>
+          <td>64</td>
+        </tr>
+        <tr>
+          <td>blankvoorn </td>
+          <td>39 – 78   </td>
+          <td>25</td>
+        </tr>
 
-  <ng-template #notShow>
+      </table>
+    </div>
 
-  </ng-template>
+  </div>
 </div>

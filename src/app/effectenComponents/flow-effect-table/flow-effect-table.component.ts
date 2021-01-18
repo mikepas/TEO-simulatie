@@ -21,7 +21,7 @@ export class FlowEffectTableComponent implements DoCheck, OnChanges {
   }
 
   ngDoCheck(): void {
-    if(this.calculation.results[2].value !== 0) {
+    if(this.calculation.results[2] !== undefined && this.calculation.results[2].value !== 0) {
       this.GeneratetubeVelocityTable();
     }
   }
