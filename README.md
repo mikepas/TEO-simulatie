@@ -21,4 +21,4 @@ Na het aanmaken van de model moet je deze aangeven in het model `Types.ts`.
 Nu kan je het nieuwe type gebruiken in de app.
 
 ## Ecologisch effect resultaat toevoegen/aanpassen
-Not yet implemented
+Als je een nieuwe tabel voor een ander effect wil toevoegen, kun je een component aanmaken in de effectenComponents mapje. Deze component implementeer je in de flowing-water-info component. Daarin zit een ngSwitch. Met deze kun je bepalen wat je wel of niet wil tonen. Dit geldt hetzelfde voor de extra ecologische informatie dat onder de tabellen verschijnt van de koudelozing berekening.

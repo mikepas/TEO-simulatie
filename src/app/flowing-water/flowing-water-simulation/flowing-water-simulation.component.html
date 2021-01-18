@@ -41,7 +41,7 @@
         <ng-container *ngFor="let result of selectedCalculation.results">
             <ng-template #popContentResult>{{ result.description }}</ng-template>
             <p *ngIf="result.value != 0">
-                <b>{{ result.name }}:</b> 
+                <b>{{ result.name }}:</b>
                 {{ result.value | number: '.1-2' }}{{ result.unit }}
                 <span *ngIf="result.description != ''" class="custom-popover" [ngbPopover]="popContentResult">
                     <i class="bi bi-info-circle"></i>
@@ -52,5 +52,5 @@
             {{ e }}
         </div>
     </div>
-    <app-flowing-water-view id="flowing-water-view" [calculation]="selectedCalculation"></app-flowing-water-view>
+    <app-flowing-water-info id="flowing-water-view" [calculation]="selectedCalculation"></app-flowing-water-info>
 </div>

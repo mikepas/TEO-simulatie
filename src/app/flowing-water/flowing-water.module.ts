@@ -6,7 +6,7 @@ import { FlowingWaterComponent } from './flowing-water.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlowingWaterSimulationComponent } from './flowing-water-simulation/flowing-water-simulation.component';
 import { FlowingWaterWikiComponent } from './flowing-water-wiki/flowing-water-wiki.component';
-import { FlowingWaterViewComponent } from './flowing-water-view/flowing-water-view.component';
+import { FlowingWaterInfoComponent } from './flowing-water-info/flowing-water-info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TemperatureEffectTableComponent } from 'src/app/effectenComponents//temperature-effect-table/temperature-effect-table.component';
 import { FlowEffectTableComponent } from 'src/app/effectenComponents/flow-effect-table/flow-effect-table.component';
@@ -15,7 +15,7 @@ import { ColdWaterEffectInfoComponent } from 'src/app/effectenComponents/cold-wa
 import { WarmWaterEffectInfoComponent } from 'src/app/effectenComponents/warm-water-effect-info/warm-water-effect-info.component';
 
 @NgModule({
-  declarations: [FlowingWaterComponent, FlowingWaterSimulationComponent, FlowingWaterWikiComponent, FlowingWaterViewComponent,TemperatureEffectTableComponent,
+  declarations: [FlowingWaterComponent, FlowingWaterSimulationComponent, FlowingWaterWikiComponent, FlowingWaterInfoComponent,TemperatureEffectTableComponent,
     FlowEffectTableComponent,
     DischargeTemperatureEffectTableComponent,
     ColdWaterEffectInfoComponent,
