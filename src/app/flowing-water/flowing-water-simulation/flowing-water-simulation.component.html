@@ -4,6 +4,10 @@
     <select class="custom-select" (change)="changeType($event)">
         <option *ngFor="let c of types.flowingTypes">{{c.name}}</option>
     </select>
+    <ng-template #popContentSelect>In dit keuzemenu kiest u het KRW-type stromend waterlichaam met daarbij of u berekeningen wilt doe voor warmte- of koudelozingen. De KRW-watertypen kunt u <a href="{{ types.url }}" target="_blank">hier</a> vinden.</ng-template>
+    <span class="custom-popover" [ngbPopover]="popContentSelect">
+        <i class="bi bi-info-circle"></i>
+    </span>
 </div>
 <hr>
 <div class="row">
