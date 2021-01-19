@@ -1,6 +1,7 @@
 
 <div [ngSwitch]="option">
   <ng-container *ngSwitchCase="'R-6 koudelozing'">
+    <h2>Ecologische effecten</h2>
     <app-temperature-effect-table [calculation]="calculation"></app-temperature-effect-table>
     <app-discharge-temperature-effect-table [calculation]="calculation"></app-discharge-temperature-effect-table>
     <app-flow-effect-table [calculation]="calculation"></app-flow-effect-table>
