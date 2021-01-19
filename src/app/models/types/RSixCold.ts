@@ -19,7 +19,7 @@ export class RSixCold implements Calculation {
             new Formula("Berekeningen R-6 koudelozing", "De berekening die voor het type R-6 koudelozing zijn gebruikt staan in het onderstaande document 'The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem'. De berekeningen staan op pagina 15 t/m 18.", ""),
         ];
         this.references = [
-            "M. Ramakers. (2020). The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem. 's Hertogenbosch. Opgehaald van <a href='https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626'>https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626</a>."
+            "M. Ramakers. (2020). The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem. 's Hertogenbosch. Opgehaald van <a href='https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626' target='_blank'>https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626</a>."
         ];
         this.inputs = [
             new Input("Jaarlijkse energiebehoefte", "De jaarlijkse warmteenergiebehoefte die nodig is, uitgedrukt in MWh.", "MWh", 2610, "number"),
@@ -27,14 +27,14 @@ export class RSixCold implements Calculation {
             new Input("Aantal dagen per jaar", "Aantal dagen dat het systeem actief is / verwacht te zijn.", "", 186, "number"),
             new Input("Aantal uren per dag", "Aantal uren dat het systeem per dag actief is.", "", 8, "number"),
             new Input("temp. verandering door TSA", "Het temperatuurverschil dat de TSA(warmtewisselaar) veroorzaakt, uitgedrukt in °C.", "°C", 4, "number"),
-            new Input("Breedte rivier", "De breedte van het het waterlichaam, uitgedrukt in meters.", "m", 20, "number"),
-            new Input("Diepte rivier", "Het diepste punt van het waterlichaam, uitgedrukt in meters", "m", 2.5, "number"),
+            new Input("Breedte waterlichaam", "De breedte van het het waterlichaam, uitgedrukt in meters.", "m", 20, "number"),
+            new Input("Diepte waterlichaam", "Het diepste punt van het waterlichaam, uitgedrukt in meters", "m", 2.5, "number"),
             new Input("Watertemperatuur", "De temperatuur van het waterlichaam op het punt van de inzuiging, uitgedrukt in °C.", "°C", 15, "number"),
             new Input("Windsnelheid", "De gemiddelde windsnelheid op het punt waar het water wordt ingezogen en geloosd, uitgedrukt in m/s.", "m/s", 5, "number"),
             new Input("Inlaat buisdiameter", "De diameter van de buis waar het water wordt ingezogen, uitgedrukt in millimeters.", "mm", 200, "number")
         ];
         this.results = [
-            new Result("Temperatuursverschil gehele lichaam", "Dit is het temperatuursverschil van het water in de rivier dat langs het systeem stroomt in de tijd dat het systeem aan staat.", 0, "°C"),
+            new Result("Temperatuursverschil gehele lichaam", "Dit is het temperatuursverschil van het water in het waterlichaam dat langs het systeem stroomt in de tijd dat het systeem aan staat.", 0, "°C"),
             new Result("Minimaal inzuigdebiet", "Het debiet dat moet worden ingezogen door het systeem.", 0, "L/s"),
             new Result("Buis inzuigznelheid", "De snelheid dat het water wordt ingezogen door de buis.", 0, "m/s")
         ];
