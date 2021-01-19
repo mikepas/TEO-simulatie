@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import localeNl from '@angular/common/locales/nl';
 import { registerLocaleData } from '@angular/common';
+
 registerLocaleData(localeNl);
 
 @NgModule({

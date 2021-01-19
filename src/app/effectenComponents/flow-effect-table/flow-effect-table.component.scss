@@ -1,0 +1,21 @@
+.ecologyTable{
+  border-width: 0;
+  display: inline-block;
+  width: 50%;
+  white-space: normal;
+  margin-top: 50px;
+  .infoTip {
+    float: right;
+    cursor: pointer;
+  }
+}
+tbody {
+  height:200px;
+  display:block;
+  overflow:auto;
+}
+thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}

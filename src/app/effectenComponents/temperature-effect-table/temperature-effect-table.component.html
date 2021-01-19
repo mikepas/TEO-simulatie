@@ -1,0 +1,26 @@
+<table class="ecologyTable table table-striped table-bordered table-hover col-lg-6" id="temperatureTable" width="100%">
+  <thead>
+    <tr>
+        <th>Temperatuur gehele lichaam na vermenging <span class="h4">{{this.tempCelsius.toFixed(2)}}°C</span>
+          <span class="infoTip" ngbTooltip="Deze tabel geeft aan of de aangeven temperatuur op den duur zorgt voor afname per organisme. Een te hoge of lage temperatuur zorg voor een afname." triggers="click:blur">
+            <i class="bi bi-info-circle"></i>
+          </span>
+        </th>
+
+    </tr>
+</thead>
+<thead>
+    <tr>
+        <th>Organismen</th>
+        <th>Paai temperatuur</th>
+        <th>Populatie afname</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let o of temperatureTableList">
+      <td>{{o[0]}}</td>
+      <td>{{o[1]}}</td>
+      <td>{{o[2]}}</td>
+    </tr>
+</tbody>
+</table>
