@@ -19,7 +19,10 @@ export class RSixCold implements Calculation {
             new Formula("Berekeningen R-6 koudelozing", "De berekening die voor het type R-6 koudelozing zijn gebruikt staan in het onderstaande document 'The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem'. De berekeningen staan op pagina 15 t/m 18.", ""),
         ];
         this.references = [
-            "M. Ramakers. (2020). The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem. 's Hertogenbosch. Opgehaald van <a href='https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626' target='_blank'>https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626</a>."
+            "M. Ramakers. (2020). The effect on thermal energy recovery on the ecology of a small, slow flowing freshwater ecosystem. 's Hertogenbosch. Opgehaald van <a href='https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626' target='_blank'>https://www.ou.nl/documents/40554/93114/Ramaker_2020_The_effect_of_thermal_energy_recovery_on_the_ecology_of_a_small_slow_flowing_freshwater_ecosystem.pdf/a3ea7c88-f6bf-bc42-16de-0552d732cf8a?t=1604396306626</a>.",
+            "technische_mogelijkheden_reductie_vis_inzuiging. Opgehaald van <a href='./../../../assets/sources/technischemogelijkhedenreductievisinzuiging-2.pdf' target='_blank'>technische_mogelijkheden_reductie_vis_inzuiging</a>.",
+            "Ecologische effecten koudwaterlozingen. Opgehaald van <a href='https://www.stowa.nl/deltafacts/zoetwatervoorziening/verzilting/ecologische-effecten-koudwaterlozingen' target='_blank'>Ecologische effecten koudwaterlozingen</a>.",
+            "Effecten van koelwater op het zoete aquatische milieu. Opgehaald van <a href='https://puc.overheid.nl/rijkswaterstaat/doc/PUC_122067_31/' target='_blank'>Effecten van koelwater op het zoete aquatische milieu</a>.",
         ];
         this.inputs = [
             new Input("Jaarlijkse energiebehoefte", "De jaarlijkse warmteenergiebehoefte die nodig is, uitgedrukt in MWh.", "MWh", 2610, "number"),
@@ -44,22 +47,22 @@ export class RSixCold implements Calculation {
 
     public calculate() : void {
         let results: number[] = [];
-    
+
         Object.keys(this.inputs).forEach((value: string, index: number, array: string[]) => {
             results.push(this.inputs[index].input);
         });
-        
+
         this.validate(results);
 
         let J = (+results[0]) * 3600000000;
         let s = (31556926 * ((+results[2]) / 365) * ((+results[3]) / 24));
         let v = ((+results[1]) / ((+results[5]) * (+results[6]) * 0.9));
-    
+
         this.results[0].value = - (J) / (4186 * (997 * (+results[1]) * s));
         this.results[1].value = (((J) / s) / (4186 * (+results[4]))) / 997 * 1000;
 
         let heatCloud = Math.sqrt((((J / s)) / ((+results[5]) * v * (Math.abs( -(4.48 + 0.049 * (+results[7]) + ((3.5 + 2 * (+results[8])) * Math.pow(5000000 / ((+results[5]) * (+results[6]) * 0.9), 0.05))) * (1.12 + 0.018 * (+results[7]) + 0.00158 * Math.pow((+results[7]), 2)) * (+results[4]))))));
-        
+
         this.mixingZoneResult.time = heatCloud;
         this.mixingZoneResult.length = heatCloud * v;
         this.results[2].value = 1.273 * (this.results[1].value / 1000) / Math.pow((+results[9]) / 1000, 2);
