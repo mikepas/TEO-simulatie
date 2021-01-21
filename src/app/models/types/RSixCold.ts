@@ -25,16 +25,16 @@ export class RSixCold implements Calculation {
             "RWS, RIZA. Effecten van koelwater op het zoete aquatische milieu. Opgehaald van <a href='https://puc.overheid.nl/rijkswaterstaat/doc/PUC_122067_31/' target='_blank'>https://puc.overheid.nl/rijkswaterstaat/doc/PUC_122067_31/</a> op 20-01-2021."
         ];
         this.inputs = [
-            new Input("Jaarlijkse energiebehoefte", "De jaarlijkse warmteenergiebehoefte die nodig is, uitgedrukt in MWh.", "MWh", 2610, "number"),
-            new Input("Debiet", "Het debiet dat door het waterlichaam stroomt, uitgedrukt in m3/s.", "m3/s", 4, "number"),
-            new Input("Aantal dagen per jaar", "Aantal dagen dat het systeem actief is / verwacht te zijn.", "", 186, "number"),
-            new Input("Aantal uren per dag", "Aantal uren dat het systeem per dag actief is.", "", 8, "number"),
-            new Input("temp. verandering door TSA", "Het temperatuurverschil dat de TSA(warmtewisselaar) veroorzaakt, uitgedrukt in °C.", "°C", 4, "number"),
-            new Input("Breedte waterlichaam", "De breedte van het het waterlichaam, uitgedrukt in meters.", "m", 20, "number"),
-            new Input("Diepte waterlichaam", "Het diepste punt van het waterlichaam, uitgedrukt in meters", "m", 2.5, "number"),
-            new Input("Watertemperatuur", "De temperatuur van het waterlichaam op het punt van de inzuiging, uitgedrukt in °C.", "°C", 15, "number"),
-            new Input("Windsnelheid", "De gemiddelde windsnelheid op het punt waar het water wordt ingezogen en geloosd, uitgedrukt in m/s.", "m/s", 5, "number"),
-            new Input("Inlaat buisdiameter", "De diameter van de buis waar het water wordt ingezogen, uitgedrukt in millimeters.", "mm", 200, "number")
+            new Input("Jaarlijkse energiebehoefte", "De jaarlijkse warmteenergiebehoefte die nodig is, uitgedrukt in MWh.", "MWh", 0, "number"),
+            new Input("Debiet", "Het debiet dat door het waterlichaam stroomt, uitgedrukt in m3/s.", "m3/s", 0, "number"),
+            new Input("Aantal dagen per jaar", "Aantal dagen dat het systeem actief is / verwacht te zijn.", "", 0, "number"),
+            new Input("Aantal uren per dag", "Aantal uren dat het systeem per dag actief is.", "", 0, "number"),
+            new Input("temp. verandering door TSA", "Het temperatuurverschil dat de TSA(warmtewisselaar) veroorzaakt, uitgedrukt in °C.", "°C", 0, "number"),
+            new Input("Breedte waterlichaam", "De breedte van het het waterlichaam, uitgedrukt in meters.", "m", 0, "number"),
+            new Input("Diepte waterlichaam", "Het diepste punt van het waterlichaam, uitgedrukt in meters", "m", 0, "number"),
+            new Input("Watertemperatuur", "De temperatuur van het waterlichaam op het punt van de inzuiging, uitgedrukt in °C.", "°C", 0, "number"),
+            new Input("Windsnelheid", "De gemiddelde windsnelheid op het punt waar het water wordt ingezogen en geloosd, uitgedrukt in m/s.", "m/s", 0, "number"),
+            new Input("Inlaat buisdiameter", "De diameter van de buis waar het water wordt ingezogen, uitgedrukt in millimeters.", "mm", 0, "number")
         ];
         this.results = [
             new Result("Temperatuursverschil gehele lichaam", "Dit is het temperatuursverschil van het water in het waterlichaam dat langs het systeem stroomt in de tijd dat het systeem aan staat.", 0, "°C"),
